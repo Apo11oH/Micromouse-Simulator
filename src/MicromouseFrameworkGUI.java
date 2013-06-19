@@ -20,11 +20,10 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.io.File;
 
-
 public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 	MicromouseRun newRun = new MicromouseRun();
 	private JTextField fileName, curDirecVal, curLocVal;
-	private JButton bStart, bClear, bFile;
+	private JButton bStart, bClear, bFile, bNext;
 	private JButton [][] board;
 	private JButton [][] traversal;
 	private JTextField dialogue;
@@ -52,8 +51,10 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 		bFile.addActionListener(this);
 		p1.add(bFile);
 		
-		
-		JPanel p2 = new JPanel(new GridLayout(2, 2, 2, 2));
+		/*
+		 * GRID: WEST
+		 */
+		JPanel p2 = new JPanel(new GridLayout(3, 2, 2, 2));
 		// make bot info screen
 		// Print current direction of the bot
 		JTextField curDirecLable = new JTextField("Current Direction: ");
@@ -69,6 +70,13 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 		curLocVal = new JTextField("( " + newRun.getCurLocX() + ", " + newRun.getCurLocY() + " )");
 		curLocVal.setEditable(false);
 		p2.add(curLocVal);
+        bStart = new JButton("Start");
+        bStart.addActionListener(this);
+        p2.add(bStart);
+        // add next button
+        bNext = new JButton("Next");
+        bNext.addActionListener(this);
+        p2.add(bNext);
 		
 		/*
 		 * GRID: CENTER
@@ -106,9 +114,9 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 	}
 	
 	public void actionPerformed(ActionEvent e) {
-		Object obj = e.getSource();
-		
-		if(obj == bFile){
+		Object obj;
+
+		if( (obj = e.getSource()) == bFile){
 			JFileChooser filechooser = new JFileChooser(new File("./"));
 			
 			int selected = filechooser.showOpenDialog(this);
@@ -117,13 +125,15 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 				newRun.createMaze(file.getPath());
 				updateMaze();
 				fileName.setText("Opened file: " + file.getName());
-			}else if(selected == JFileChooser.CANCEL_OPTION ){
+			}else if( selected == JFileChooser.CANCEL_OPTION ){
 				fileName.setText("Operation canceled");
 			}else if( selected == JFileChooser.ERROR_OPTION ){
 				fileName.setText("Error opening file");
 			}
-		}else if(obj == bClear){
-		}
+		}else if( obj == bClear ){
+		}else if( obj == bNext ){
+
+        }
 	} // end method
 	
 	// method: change color of the button

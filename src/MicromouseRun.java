@@ -12,19 +12,21 @@
 public class MicromouseRun {
 	public static final int BOARD_MAX = 16;
 	public static final int	GOAL = BOARD_MAX/2-1;
-	PotentialBoard newPotBoard;
+	private PotentialBoard potential;
+    private TraversalMap traversal;
 	private Droid droid;
 	private MazeMap mazeMap;
 	
 	// constructor (default)
 	public MicromouseRun(){
-		newPotBoard = new PotentialBoard();
+        potential = new PotentialBoard();
+        traversal = new TraversalMap();
 		droid = new Droid();
 		mazeMap = new MazeMap();
 	}
 	
 	public int getPotential(int locx, int locy){
-		return newPotBoard.getPotential(locx, locy);
+		return potential.getPotential(locx, locy);
 	}
 	
 	public int getCurLocX(){
@@ -50,6 +52,29 @@ public class MicromouseRun {
 	public void updatePotential(){
 		
 	}
+
+    public void setTraversalMap(int locx, int locy, int curDirec){
+        int front=0;
+        int left=0;
+        int right=0;
+
+        switch (curDirec) {
+            case 0: front=0; right=1; left=3; break;
+            case 1: front=1; right=2; left=0; break;
+            case 2: front=2; right=3; left=1; break;
+            case 3: front=3; right=0; left=2; break;
+        }
+
+        if( (mazeMap.getMazeVal(locx, locy) & 0x01) != 0x00 ){
+            traversal.setWall(locx, locy, front);
+        }
+        if( (mazeMap.getMazeVal(locx, locy) & 0x02) != 0x00 ){
+            traversal.setWall(locx, locy, right);
+        }
+        if( (mazeMap.getMazeVal(locx, locy) & 0x08) != 0x00 ){
+            traversal.setWall(locx, locy, left);
+        }
+    }
 
 	public int getMazeVal(int locx, int locy){
 		return mazeMap.getMazeVal(locx, locy);

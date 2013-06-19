@@ -22,9 +22,11 @@ public class Droid {
 	public int getCurLocX(){ return curLocX; }
 	
 	public int getCurLocY(){ return curLocY; }
-	
-	// mutator for boolean
-	public void setCurDirec(int newDirec){
-		curDirec = newDirec;
-	}
+
+    public void setCurDirec(int newDirec){ curDirec = newDirec; }
+
+    public void setCurLocX(int newLocX){ curLocX = newLocX; }
+
+    public void setCurLocY(int newLocY){ curLocY = newLocY; }
+
 }

@@ -1,17 +1,7 @@
-/*
- * Name of program: MicromouseFrameworkGUI
- * Name of programmer: Ken Yokoyama
- * Description: Micromouse Framework GUI driver
- * Variable: newGame -- KenoGame class reference 
- * 			jcb -- GUI combo box for the number of numbers chosen
- * 			jtf -- GUI text field for input of bet
- * 			bStart -- GUI button to start game
- * 			bClear -- GUI button to clear board
- * 			board -- array of GUI buttons for each number on the board
- * 			dialogue -- text field showing user some status update
- * 			numberChosen -- the number of numbers chosen
- * 			chosenCounter -- counter for the numbers of numbers chosen
- * 			tempIntBuf -- buffer for the numbers chosen
+/**
+ * Filename: MicromouseFrameworkGUI.java
+ * Programmer: Apo11oH
+ * Description:
  */
 
 import java.awt.*;
@@ -60,7 +50,7 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 		JTextField curDirecLable = new JTextField("Current Direction: ");
 		curDirecLable.setEditable(false);
 		p2.add(curDirecLable);
-		curDirecVal = new JTextField(newRun.getCurrentLoc());
+		curDirecVal = new JTextField(newRun.getCurrentDirLable());
 		curDirecVal.setEditable(false);
 		p2.add(curDirecVal);
 		// Print current location

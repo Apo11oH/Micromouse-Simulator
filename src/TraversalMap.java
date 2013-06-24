@@ -1,13 +1,13 @@
 /**
- * Created with IntelliJ IDEA.
- * User: Kenny
- * Date: 6/19/13
- * Time: 7:52 AM
- * To change this template use File | Settings | File Templates.
+ * Filename: TraversalMap.java
+ * Programmer: Apo11oH
+ * Description:
  */
+
 public class TraversalMap {
     private int [][] traversal = new int[MicromouseRun.BOARD_MAX][MicromouseRun.BOARD_MAX];
 
+    // Default constructor
     public TraversalMap(){
         for(int i=0; i<MicromouseRun.BOARD_MAX; i++){
             for(int j=0; j<MicromouseRun.BOARD_MAX; j++){
@@ -54,5 +54,26 @@ public class TraversalMap {
         }
     }
 
+    public void setTraversalMap(int locx, int locy, int curDirec, int mazeValue){
+        int front=0;
+        int left=0;
+        int right=0;
 
+        switch (curDirec) {
+            case 0: front=0; right=1; left=3; break;
+            case 1: front=1; right=2; left=0; break;
+            case 2: front=2; right=3; left=1; break;
+            case 3: front=3; right=0; left=2; break;
+        }
+
+        if( (mazeValue & 0x01) != 0x00 ){
+            setWall(locx, locy, front);
+        }
+        if( (mazeValue & 0x02) != 0x00 ){
+            setWall(locx, locy, right);
+        }
+        if( (mazeValue & 0x08) != 0x00 ){
+            setWall(locx, locy, left);
+        }
+    }
 }

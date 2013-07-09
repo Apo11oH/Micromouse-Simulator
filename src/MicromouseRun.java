@@ -58,5 +58,7 @@ public class MicromouseRun {
     /*
      *  Potential map related functions
      */
-
+    public int getPotential(int locx, int locy){
+        return droid.getPotential(locx, locy);
+    }
 }

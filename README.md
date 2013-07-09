@@ -1,2 +1,2 @@
-Micromouse-Simulator
+Micromouse Simulator
 ====================

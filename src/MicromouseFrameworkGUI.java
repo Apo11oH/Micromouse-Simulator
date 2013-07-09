@@ -81,6 +81,19 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 				p3.add(board[i][j]);
 			}
 		}
+
+        /*
+         *  GRID: EAST
+         */
+        JPanel p4 = new JPanel(new GridLayout(16, 16));
+        // make board GUI
+        traversal = new JButton[newRun.BOARD_MAX][newRun.BOARD_MAX];
+        for(int i=0; i<newRun.BOARD_MAX; i++){
+            for(int j=0; j<newRun.BOARD_MAX; j++){
+                traversal[i][j] = new JButton("");
+                p3.add(board[i][j]);
+            }
+        }
 		
 		/*
 		 * GRID: SOUTH
@@ -98,9 +111,9 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 		panel.add(p1, BorderLayout.NORTH);
 		panel.add(p2, BorderLayout.WEST);
 		panel.add(p3, BorderLayout.CENTER);
+        panel.add(p4, BorderLayout.EAST);
 		panel.add(p5, BorderLayout.SOUTH);
 		getContentPane().add(panel);
-		changeColors();
 	}
 	
 	public void actionPerformed(ActionEvent e) {
@@ -123,6 +136,8 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 		}else if( obj == bClear ){
 		}else if( obj == bNext ){
 
+        }else if(obj == bStart){
+            changeColors();
         }
 	} // end method
 	

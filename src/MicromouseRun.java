@@ -1,12 +1,12 @@
-/*
- * Name of program: Homework #7
- * Name of programmer: Ken Yokoyama
- * Description: class for the keno game
- * Variable: MAX_KENO_NUMBER - max amount of numbers on the keno board
- * 			DRAWN_NUMBER - max number of numbers to be drawn
- * 			payoff - 2-dim array of doubles for the payoff of the game
- * 			newBoard - reference to the KenoBoard class
- * 			newPlayer - reference to the KenoPlayer class
+/**
+ * Name of programmer: ApolloH
+ * Description: Micromouse simulator text runner
+ * Variable: BOARD_MAX - Max dimension of the board
+ *          GOAL - Goal location
+ *          potential - potential map module
+ *          traversal - traversal map module
+ *          droid - droid module
+ *          mazeMap - maze module
  */
 
 public class MicromouseRun {
@@ -16,28 +16,48 @@ public class MicromouseRun {
     private TraversalMap traversal;
 	private Droid droid;
 	private MazeMap mazeMap;
-	
-	// constructor (default)
+
+    /**
+     * Constructor
+     */
 	public MicromouseRun(){
         potential = new PotentialBoard();
         traversal = new TraversalMap();
 		droid = new Droid();
 		mazeMap = new MazeMap();
 	}
-	
+
+    /**
+     * Get the potential value of a specific cell from the potential variable
+     * @param locx: Specified x-coordinate
+     * @param locy: Specified y-coordinate
+     * @return Potential value of a specific cell
+     */
 	public int getPotential(int locx, int locy){
 		return potential.getPotential(locx, locy);
 	}
-	
+
+    /**
+     * Gets the current x-coordinate of the droid
+     * @return x-coordinate
+     */
 	public int getCurLocX(){
 		return droid.getCurLocX();
 	}
-	
+
+    /**
+     * Gets the current y-coordinate of the droid
+     * @return y-coordinate
+     */
 	public int getCurLocY(){
 		return droid.getCurLocY();
 	}
-	
-	public String getCurrentLoc(){
+
+    /**
+     * Gets the corresponding label for the current direction
+     * @return Label of direction the droid is facing
+     */
+	public String getCurrentDirec(){
 		int val = droid.getCurDirec();
 		String retString = "";
 		switch(val){
@@ -48,11 +68,21 @@ public class MicromouseRun {
 		}
 		return retString;
 	}
-	
+
+    /**
+     * Updates potential map based on the traversal map.
+     */
 	public void updatePotential(){
 		
 	}
 
+    /**
+     * Sets the value for a cell in the traversal map based on the
+     * sensor values (is there a wall or not?)
+     * @param locx Specified x-coordinate
+     * @param locy Specified y-coordinate
+     * @param curDirec Current direction of the droid
+     */
     public void setTraversalMap(int locx, int locy, int curDirec){
         int front=0;
         int left=0;
@@ -76,10 +106,20 @@ public class MicromouseRun {
         }
     }
 
+    /**
+     * Gets the wall value for a specified cell
+     * @param locx Specified x-coordinate
+     * @param locy Specified y-coordinate
+     * @return Wall value for the specified location
+     */
 	public int getMazeVal(int locx, int locy){
 		return mazeMap.getMazeVal(locx, locy);
 	}
-	
+
+     /**
+     * Instantiates the maze
+     * @param filepath Path to the file containing maze data
+     */
 	public void createMaze(String filepath){
 		mazeMap.createMaze(filepath);
 	}

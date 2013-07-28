@@ -1,6 +1,5 @@
-/*
- * Name of program: MicromouseFrameworkGUI
- * Name of programmer: Ken Yokoyama
+/**
+ * Name of programmer: ApolloH
  * Description: Micromouse Framework GUI driver
  * Variable: newGame -- KenoGame class reference 
  * 			jcb -- GUI combo box for the number of numbers chosen
@@ -14,10 +13,11 @@
  * 			tempIntBuf -- buffer for the numbers chosen
  */
 
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.Border;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 
 public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
@@ -27,7 +27,10 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 	private JButton [][] board;
 	private JButton [][] traversal;
 	private JTextField dialogue;
-	
+
+    /**
+     * Constructs the GUI for the program
+     */
 	public MicromouseFrameworkGUI(){
 		super("Micromouse Framework GUI");
 
@@ -60,7 +63,7 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 		JTextField curDirecLable = new JTextField("Current Direction: ");
 		curDirecLable.setEditable(false);
 		p2.add(curDirecLable);
-		curDirecVal = new JTextField(newRun.getCurrentLoc());
+		curDirecVal = new JTextField(newRun.getCurrentDirec());
 		curDirecVal.setEditable(false);
 		p2.add(curDirecVal);
 		// Print current location
@@ -112,7 +115,11 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 		getContentPane().add(panel);
 		changeColors();
 	}
-	
+
+    /**
+     * Catches the ActionListener
+     * @param e : ActionEvent
+     */
 	public void actionPerformed(ActionEvent e) {
 		Object obj;
 
@@ -135,7 +142,10 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 
         }
 	} // end method
-	
+
+    /**
+     * Changes the color of the button (red <=> default)
+     */
 	// method: change color of the button
 	public void changeColors(){
 		if( board[newRun.getCurLocY()][newRun.getCurLocX()].getBackground() != Color.red ){
@@ -144,7 +154,13 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 			 board[newRun.getCurLocY()][newRun.getCurLocX()].setBackground(null);
 		}
 	}
-	
+
+    /**
+     * Checks the specified cell for borders and highlights them
+     * @param locx: Specified x-coordinate
+     * @param locy: Specified y-coordinate
+     * @return Returns new Border pattern for the specified cell
+     */
 	public Border findBorder(int locx, int locy){
 		int top = 0, left = 0, bottom = 0, right = 0;
 		int val = newRun.getMazeVal(locx, locy);
@@ -156,7 +172,10 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 		
 		return BorderFactory.createMatteBorder(top, left, bottom, right, Color.black);
 	}
-	
+
+    /**
+     * Updates the GUI with the latest border patterns
+     */
 	public void updateMaze(){
 		for(int i=0; i<newRun.BOARD_MAX; i++){
 			for(int j=0; j<newRun.BOARD_MAX; j++){

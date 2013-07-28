@@ -1,4 +1,4 @@
-Micromouse-Simulator
+Micromouse Simulator
 ====================
 A program that tests the maze mapping algorithm used on a micromouse.
 

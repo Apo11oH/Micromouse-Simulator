@@ -60,7 +60,7 @@ public class MazeMap{
 		}catch(IOException e){
 			System.out.println("Oh No! Read error :(");
 		}catch(Exception e){
-			System.out.println("Some other error occured...");
+			System.out.println("Some other error occurred...");
 		}
 	}
 }

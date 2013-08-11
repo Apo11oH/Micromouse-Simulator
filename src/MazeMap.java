@@ -22,11 +22,7 @@ public class MazeMap{
      * Default constructor
      */
 	public MazeMap(){
-		for(int i=0; i<MicromouseRun.BOARD_MAX; i++){
-			for(int j=0; j<MicromouseRun.BOARD_MAX; j++){
-				mazeMap[i][j] = 0;
-			}
-		}
+		initMaze();
 	}
 
     /**
@@ -63,4 +59,22 @@ public class MazeMap{
 			System.out.println("Some other error occurred...");
 		}
 	}
+
+    /**
+     * Resets the maze
+     */
+    public void resetMaze(){
+        initMaze();
+    }
+
+    /**
+     * Initializes the maze
+     */
+    private void initMaze(){
+        for(int i=0; i<MicromouseRun.BOARD_MAX; i++){
+            for(int j=0; j<MicromouseRun.BOARD_MAX; j++){
+                mazeMap[i][j] = 0;
+            }
+        }
+    }
 }

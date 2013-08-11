@@ -11,11 +11,7 @@ public class TraversalMap {
      * Default constructor
      */
     public TraversalMap(){
-        for(int i=0; i<MicromouseRun.BOARD_MAX; i++){
-            for(int j=0; j<MicromouseRun.BOARD_MAX; j++){
-                traversal[i][j] = 0;
-            }
-        }
+        initTraversal();
     }
 
     /**
@@ -76,5 +72,22 @@ public class TraversalMap {
         }
     }
 
+    /**
+     * Reset the traversal board
+     */
+    public void resetTraversal(){
+        initTraversal();
+    }
+
+    /**
+     * Initialize the traversal map
+     */
+    private void initTraversal(){
+        for(int i=0; i<MicromouseRun.BOARD_MAX; i++){
+            for(int j=0; j<MicromouseRun.BOARD_MAX; j++){
+                traversal[i][j] = 0;
+            }
+        }
+    }
 
 }

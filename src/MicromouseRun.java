@@ -12,8 +12,6 @@
 public class MicromouseRun {
 	public static final int BOARD_MAX = 16;
 	public static final int	GOAL = BOARD_MAX/2-1;
-	private PotentialBoard potential;
-    private TraversalMap traversal;
 	private Droid droid;
 	private MazeMap mazeMap;
 
@@ -21,20 +19,8 @@ public class MicromouseRun {
      * Constructor
      */
 	public MicromouseRun(){
-        potential = new PotentialBoard();
-        traversal = new TraversalMap();
 		droid = new Droid();
 		mazeMap = new MazeMap();
-	}
-
-    /**
-     * Get the potential value of a specific cell from the potential variable
-     * @param locx: Specified x-coordinate
-     * @param locy: Specified y-coordinate
-     * @return Potential value of a specific cell
-     */
-	public int getPotential(int locx, int locy){
-		return potential.getPotential(locx, locy);
 	}
 
     /**
@@ -70,43 +56,6 @@ public class MicromouseRun {
 	}
 
     /**
-     * Updates potential map based on the traversal map.
-     */
-	public void updatePotential(){
-		
-	}
-
-    /**
-     * Sets the value for a cell in the traversal map based on the
-     * sensor values (is there a wall or not?)
-     * @param locx Specified x-coordinate
-     * @param locy Specified y-coordinate
-     * @param curDirec Current direction of the droid
-     */
-    public void setTraversalMap(int locx, int locy, int curDirec){
-        int front=0;
-        int left=0;
-        int right=0;
-
-        switch (curDirec) {
-            case 0: front=0; right=1; left=3; break;
-            case 1: front=1; right=2; left=0; break;
-            case 2: front=2; right=3; left=1; break;
-            case 3: front=3; right=0; left=2; break;
-        }
-
-        if( (mazeMap.getMazeVal(locx, locy) & 0x01) != 0x00 ){
-            traversal.setWall(locx, locy, front);
-        }
-        if( (mazeMap.getMazeVal(locx, locy) & 0x02) != 0x00 ){
-            traversal.setWall(locx, locy, right);
-        }
-        if( (mazeMap.getMazeVal(locx, locy) & 0x08) != 0x00 ){
-            traversal.setWall(locx, locy, left);
-        }
-    }
-
-    /**
      * Gets the wall value for a specified cell
      * @param locx Specified x-coordinate
      * @param locy Specified y-coordinate
@@ -116,6 +65,12 @@ public class MicromouseRun {
 		return mazeMap.getMazeVal(locx, locy);
 	}
 
+    /**
+     * Gets the potential value for a specific cell
+     */
+    public int getPotential(int locx, int locy){
+        return droid.getPotential(locx, locy);
+    }
      /**
      * Instantiates the maze
      * @param filepath Path to the file containing maze data
@@ -123,4 +78,19 @@ public class MicromouseRun {
 	public void createMaze(String filepath){
 		mazeMap.createMaze(filepath);
 	}
+
+    /**
+     * Droid make a move
+     */
+    public void makeNextMove(){
+        droid.makeNextMove(this.mazeMap);
+    }
+
+    /**
+     * Resets all the variables
+     */
+    public void resetAll(){
+        droid.resetAll();
+        mazeMap.resetMaze();
+    }
 }

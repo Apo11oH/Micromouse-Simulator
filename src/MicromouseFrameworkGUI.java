@@ -138,8 +138,11 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 				fileName.setText("Error opening file");
 			}
 		}else if( obj == bClear ){
+            newRun.resetAll();
+            updateMaze();
 		}else if( obj == bNext ){
-
+            newRun.makeNextMove();
+            updateMaze();
         }
 	} // end method
 
@@ -186,7 +189,7 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 	
 	public static void main(String[] args) {
 		MicromouseFrameworkGUI newGUI = new MicromouseFrameworkGUI();
-		newGUI.setSize(1200, 900); // width, height
+		newGUI.setSize(1000, 600); // width, height
 		newGUI.setVisible(true);
 		newGUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

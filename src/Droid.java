@@ -11,14 +11,18 @@ public class Droid {
     private int nxtDirec;
 	private int curLocX;
 	private int curLocY;
+    private int mazeVal;
     private PotentialMap potential;
     private TraversalMap traversal;
+    private String dialogue;
+    private int front, left, right;
 
     /**
      * Default constructor
      */
 	public Droid(){
 		curDirec = 0;
+        nxtDirec = 0;
 		curLocX = 0;
 		curLocY = MicromouseRun.BOARD_MAX-1;
         potential = new PotentialMap();
@@ -64,38 +68,45 @@ public class Droid {
     }
 
     /**
+     * Get dialogue for GUI
+     * @return Message for user
+     */
+    public String getDialogue(){
+        return dialogue;
+    }
+
+    /**
      * Sets the value for a cell in the traversal map based on the
      * sensor values (is there a wall or not?)
      * @param locx Specified x-coordinate
      * @param locy Specified y-coordinate
-     * @param curDirec Current direction of the droid
      */
-    public void setTraversalMap(int locx, int locy, int curDirec, MazeMap mazeMap){
-        int front=0;
-        int left=0;
-        int right=0;
-
+    public void setTraversalMap(int locx, int locy, MazeMap mazeMap){
+        mazeVal = mazeMap.getMazeVal(locx, locy);
         switch (curDirec) {
             case 0: front=0; right=1; left=3; break;
             case 1: front=1; right=2; left=0; break;
             case 2: front=2; right=3; left=1; break;
             case 3: front=3; right=0; left=2; break;
+            default: front=0; right=1; left=3;
         }
 
-        if( (mazeMap.getMazeVal(locx, locy) & 0x01) != 0x00 ){
-            traversal.setWall(locx, locy, front);
-        }else{
-            traversal.setChecked(locx, locy, front);
-        }
-        if( (mazeMap.getMazeVal(locx, locy) & 0x02) != 0x00 ){
-            traversal.setWall(locx, locy, right);
-        }else{
-            traversal.setChecked(locx, locy, right);
-        }
-        if( (mazeMap.getMazeVal(locx, locy) & 0x08) != 0x00 ){
-            traversal.setWall(locx, locy, left);
-        }else{
-            traversal.setChecked(locx, locy, left);
+        if( (mazeVal & 0xf0) != 0xf0 ){
+            if( (mazeVal & 0x01) == 0x01 ){
+                traversal.setWall(locx, locy, front);
+            }else{
+                traversal.setChecked(locx, locy, front);
+            }
+            if( (mazeVal & 0x02) == 0x02 ){
+                traversal.setWall(locx, locy, right);
+            }else{
+                traversal.setChecked(locx, locy, right);
+            }
+            if( (mazeVal & 0x08) == 0x08 ){
+                traversal.setWall(locx, locy, left);
+            }else{
+                traversal.setChecked(locx, locy, left);
+            }
         }
     }
 
@@ -104,9 +115,13 @@ public class Droid {
      * @return Next direction
      */
     public int chooseTurn(){
-        int [] neighborhood = {0, 0, 0, 0};
+        int [] neighborhood = new int[4];
         int smallest;
         int index = 0;
+
+        for(int i=0; i<4; i++){
+            neighborhood[i] = 0;
+        }
 
         if( (traversal.getTraversal(curLocX, curLocY)&0x01) != 0 ){
             neighborhood[0] = potential.getPotential(curLocX, curLocY);
@@ -156,13 +171,16 @@ public class Droid {
      */
     public void makeNextMove(MazeMap mazeMap){
         // Scan area and update Traversal Map
-        setTraversalMap(curLocX, curLocY, curDirec, mazeMap);
+        setTraversalMap(curLocX, curLocY, mazeMap);
         // Update Potential Map
         potential.updatePotential(curLocX, curLocY, traversal);
         // Decide where to go/make a turn
         nxtDirec = chooseTurn();
         // Update coordinates
         updateCoordinates();
+        // Set dialogue
+        dialogue = "Front: " + front + ", Right: " + right + ", Left: " + left + ", Next Direc: " + nxtDirec
+                    + ", MazeVal: " + mazeVal;
     }
 
     /**

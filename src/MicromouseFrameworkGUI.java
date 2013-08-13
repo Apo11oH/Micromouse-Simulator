@@ -23,7 +23,7 @@ import java.io.File;
 public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 	MicromouseRun newRun = new MicromouseRun();
 	private JTextField fileName, curDirecVal, curLocVal;
-	private JButton bStart, bClear, bFile, bNext;
+	private JButton bStart, bClear, bFile, bNext, bReset;
 	private JButton [][] board;
 	private JButton [][] traversal;
 	private JTextField dialogue;
@@ -75,6 +75,7 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 		p2.add(curLocVal);
         bStart = new JButton("Start");
         bStart.addActionListener(this);
+        bStart.setEnabled(false);
         p2.add(bStart);
         // add next button
         bNext = new JButton("Next");
@@ -100,11 +101,15 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 		 * GRID: SOUTH
 		 */
 		// add dialogue
-		JPanel p5 = new JPanel(new GridLayout(1, 2, 5, 5));
+		JPanel p5 = new JPanel(new GridLayout(1, 3, 5, 5));
 		dialogue = new JTextField();
 		dialogue.setEditable(false);
 		p5.add(dialogue);
-		// add clear button
+        // add reset droid button
+        bReset = new JButton("Reset Droid");
+        bReset.addActionListener(this);
+        p5.add(bReset);
+		// add clear all button
 		bClear = new JButton("Clear All");
 		bClear.addActionListener(this);
 		p5.add(bClear);
@@ -132,18 +137,25 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 				newRun.createMaze(file.getPath());
 				initMaze();
 				fileName.setText("Opened file: " + file.getName());
+                bStart.setEnabled(true);
 			}else if( selected == JFileChooser.CANCEL_OPTION ){
 				fileName.setText("Operation canceled");
 			}else if( selected == JFileChooser.ERROR_OPTION ){
 				fileName.setText("Error opening file");
 			}
 		}else if( obj == bClear ){
-            bStart.setEnabled(true);
+            bStart.setEnabled(false);
             bNext.setEnabled(false);
             unsetColor();
             newRun.resetAll();
             initMaze();
-		}else if( obj == bNext ){
+		}else if( obj == bReset ){
+            bStart.setEnabled(true);
+            bNext.setEnabled(false);
+            unsetColor();
+            newRun.resetDroid();
+            initMaze();
+        }else if( obj == bNext ){
             unsetColor();
             newRun.makeNextMove();
             setColors();
@@ -228,9 +240,11 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 		for(int i=0; i<newRun.BOARD_MAX; i++){
 			for(int j=0; j<newRun.BOARD_MAX; j++){
 				board[i][j].setBorder(findBorder(j, i, false));
-                board[i][j].setText("" + newRun.getPotential(i, j));
+                board[j][i].setText(String.format("%x", newRun.getTravVal(i, j)));
 			}
 		}
+        // Set dialogue
+        dialogue.setText(newRun.getDialogue());
         // Update heading
         curDirecVal.setText(newRun.getCurrentDirec());
         // Update location

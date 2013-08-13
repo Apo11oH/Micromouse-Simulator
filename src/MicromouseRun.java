@@ -94,10 +94,22 @@ public class MicromouseRun {
 	}
 
     /**
+     * Get dialogue for GUI
+     * @return Message for user
+     */
+    public String getDialogue(){
+        return droid.getDialogue();
+    }
+
+    /**
      * Droid make a move
      */
     public void makeNextMove(){
         droid.makeNextMove(this.mazeMap);
+    }
+
+    public void resetDroid(){
+        droid.resetAll();
     }
 
     /**

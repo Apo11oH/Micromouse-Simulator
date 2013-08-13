@@ -88,6 +88,7 @@ public class TraversalMap {
                 traversal[i][j] = 0;
             }
         }
+        traversal[MicromouseRun.BOARD_MAX-1][0] = 0x44;
     }
 
 }

@@ -22,5 +22,9 @@ ex. if there are walls in the North, East and South, the cell value will be 11
 
 Might change this to hex in the future...
 
+Current Bugs:
+Potential map not working
+Nav system borked
+Temporaraly printing out Traversal values in each cell
 
 Team S.H.I.E.L.D.

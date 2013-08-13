@@ -8,6 +8,7 @@
 
 public class Droid {
 	private int curDirec;
+    private int nxtDirec;
 	private int curLocX;
 	private int curLocY;
     private PotentialMap potential;
@@ -43,13 +44,23 @@ public class Droid {
 	public int getCurLocY(){ return curLocY; }
 
     /**
-     * Get the potential value of a specific cell from the potential variable
+     * Get the potential value of a specific cell from the potential map
      * @param locx: Specified x-coordinate
      * @param locy: Specified y-coordinate
      * @return Potential value of a specific cell
      */
     public int getPotential(int locx, int locy){
         return potential.getPotential(locx, locy);
+    }
+
+    /**
+     * Get the traversal value of a specific cell from the traversal map
+     * @param locx: Specified x-coordinate
+     * @param locy: Specified y-coordinate
+     * @return Potential value of a specific cell
+     */
+    public int getTraversal(int locx, int locy){
+        return traversal.getTraversal(locx, locy);
     }
 
     /**
@@ -88,9 +99,13 @@ public class Droid {
         }
     }
 
+    /**
+     * Choose next direction to move
+     * @return Next direction
+     */
     public int chooseTurn(){
         int [] neighborhood = {0, 0, 0, 0};
-        int smallest = 0;
+        int smallest;
         int index = 0;
 
         if( (traversal.getTraversal(curLocX, curLocY)&0x01) != 0 ){
@@ -118,6 +133,25 @@ public class Droid {
     }
 
     /**
+     * Update the current coordinates of the droid
+     */
+    public void updateCoordinates(){
+        switch(nxtDirec){
+            // Keep current direction
+            case 0: handleCoordinates();
+                    curDirec = nxtDirec;
+                    break;
+            // Make 90 degree turn to the right
+            case 1: curDirec = nxtDirec; break;
+            // Make 180 degree turn
+            case 2: curDirec = nxtDirec; break;
+            // Make 270 degree turn to the right
+            // a.k.a. 90 degree turn to the left
+            case 3: curDirec = nxtDirec; break;
+        }
+    }
+
+    /**
      * Droid make a move
      */
     public void makeNextMove(MazeMap mazeMap){
@@ -126,11 +160,9 @@ public class Droid {
         // Update Potential Map
         potential.updatePotential(curLocX, curLocY, traversal);
         // Decide where to go/make a turn
-
+        nxtDirec = chooseTurn();
         // Update coordinates
-
-        // Does above action
-
+        updateCoordinates();
     }
 
     /**
@@ -143,4 +175,25 @@ public class Droid {
         traversal.resetTraversal();
         potential.resetPotential();
     }
+
+    /**
+     * Modify x,y-coordinates based on current direction
+     */
+    private void handleCoordinates(){
+        switch(curDirec){
+            case 0: curLocY--; break;
+            case 1: curLocX++; break;
+            case 2: curLocY++; break;
+            case 3: curLocX--; break;
+        }
+    }
+
+    /**
+     * Calculates turn based on current and next direction
+     * (For actual droid implementation)
+     * @return The amount need to turn
+     */
+    //private int calcTurn(){
+    //    return Math.abs(curDirec-nxtDirec);
+    //}
 }

@@ -79,6 +79,7 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
         // add next button
         bNext = new JButton("Next");
         bNext.addActionListener(this);
+        bNext.setEnabled(false);
         p2.add(bNext);
 		
 		/*
@@ -90,7 +91,7 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 		for(int i=0; i<newRun.BOARD_MAX; i++){
 			for(int j=0; j<newRun.BOARD_MAX; j++){
 				board[i][j] = new JButton("" + newRun.getPotential(j, i));
-				board[i][j].setBorder(findBorder(j, i));
+                board[i][j].setBackground(Color.green);
 				p3.add(board[i][j]);
 			}
 		}
@@ -104,7 +105,7 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 		dialogue.setEditable(false);
 		p5.add(dialogue);
 		// add clear button
-		bClear = new JButton("Reset Run");
+		bClear = new JButton("Clear All");
 		bClear.addActionListener(this);
 		p5.add(bClear);
 		
@@ -113,7 +114,6 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 		panel.add(p3, BorderLayout.CENTER);
 		panel.add(p5, BorderLayout.SOUTH);
 		getContentPane().add(panel);
-		changeColors();
 	}
 
     /**
@@ -130,7 +130,7 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 			if( selected == JFileChooser.APPROVE_OPTION  ){
 				File file = filechooser.getSelectedFile();
 				newRun.createMaze(file.getPath());
-				updateMaze();
+				initMaze();
 				fileName.setText("Opened file: " + file.getName());
 			}else if( selected == JFileChooser.CANCEL_OPTION ){
 				fileName.setText("Operation canceled");
@@ -138,35 +138,57 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 				fileName.setText("Error opening file");
 			}
 		}else if( obj == bClear ){
+            bStart.setEnabled(true);
+            bNext.setEnabled(false);
+            unsetColor();
             newRun.resetAll();
-            updateMaze();
+            initMaze();
 		}else if( obj == bNext ){
+            unsetColor();
             newRun.makeNextMove();
+            setColors();
             updateMaze();
+        }else if(obj == bStart){
+            bStart.setEnabled(false);
+            bNext.setEnabled(true);
+            startMaze();
+            setColors();
+        }else{
+            JOptionPane.showMessageDialog(this, "Something went wrong...");
         }
 	} // end method
 
     /**
-     * Changes the color of the button (red <=> default)
+     * Sets the color of the button to red
      */
 	// method: change color of the button
-	public void changeColors(){
-		if( board[newRun.getCurLocY()][newRun.getCurLocX()].getBackground() != Color.red ){
-			 board[newRun.getCurLocY()][newRun.getCurLocX()].setBackground(Color.red);
-		}else{
-			 board[newRun.getCurLocY()][newRun.getCurLocX()].setBackground(null);
-		}
+	public void setColors(){
+		board[newRun.getCurLocY()][newRun.getCurLocX()].setBackground(Color.red);
 	}
+
+    /**
+     * Unsets the color of the button green
+     */
+    public void unsetColor(){
+        board[newRun.getCurLocY()][newRun.getCurLocX()].setBackground(Color.green);
+    }
 
     /**
      * Checks the specified cell for borders and highlights them
      * @param locx: Specified x-coordinate
      * @param locy: Specified y-coordinate
+     * @param opt: If true, initialize. Else, update.
      * @return Returns new Border pattern for the specified cell
      */
-	public Border findBorder(int locx, int locy){
+	public Border findBorder(int locx, int locy, boolean opt){
 		int top = 0, left = 0, bottom = 0, right = 0;
-		int val = newRun.getMazeVal(locx, locy);
+		int val;
+
+        if(opt){
+            val = newRun.getMazeVal(locx, locy);
+        }else{
+            val = newRun.getTravVal(locx, locy);
+        }
 		
 		if( (val&0x01) == 0x01 ) top = 5;
 		if( (val&0x02) == 0x02 ) right = 5;
@@ -177,16 +199,44 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 	}
 
     /**
+     * Initializes the GUI with the latest border patterns
+     */
+    public void initMaze(){
+        for(int i=0; i<newRun.BOARD_MAX; i++){
+            for(int j=0; j<newRun.BOARD_MAX; j++){
+                board[i][j].setBorder(findBorder(j, i, true));
+            }
+        }
+    }
+
+    /**
+     * Prep map for new run
+     */
+    public void startMaze(){
+        for(int i=0; i<newRun.BOARD_MAX; i++){
+            for(int j=0; j<newRun.BOARD_MAX; j++){
+                board[i][j].setBorder(null);
+            }
+        }
+    }
+
+    /**
      * Updates the GUI with the latest border patterns
      */
 	public void updateMaze(){
+        // Set the borders and potential value
 		for(int i=0; i<newRun.BOARD_MAX; i++){
 			for(int j=0; j<newRun.BOARD_MAX; j++){
-				board[i][j].setBorder(findBorder(j, i));
+				board[i][j].setBorder(findBorder(j, i, false));
+                board[i][j].setText("" + newRun.getPotential(i, j));
 			}
 		}
+        // Update heading
+        curDirecVal.setText(newRun.getCurrentDirec());
+        // Update location
+        curLocVal.setText("( " + newRun.getCurLocX() + ", " + newRun.getCurLocY() + " )");
 	}
-	
+
 	public static void main(String[] args) {
 		MicromouseFrameworkGUI newGUI = new MicromouseFrameworkGUI();
 		newGUI.setSize(1000, 600); // width, height

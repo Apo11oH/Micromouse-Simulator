@@ -67,10 +67,24 @@ public class MicromouseRun {
 
     /**
      * Gets the potential value for a specific cell
+     * @param locx Specified x-coordinate
+     * @param locy Specified y-coordinate
+     * @return Potential value for the specified location
      */
     public int getPotential(int locx, int locy){
         return droid.getPotential(locx, locy);
     }
+
+    /**
+     * Gets the traversal value for a specific cell
+     * @param locx Specified x-coordinate
+     * @param locy Specified y-coordinate
+     * @return Traversal value for the specified location
+     */
+    public int getTravVal(int locx, int locy){
+        return droid.getTraversal(locx, locy);
+    }
+
      /**
      * Instantiates the maze
      * @param filepath Path to the file containing maze data

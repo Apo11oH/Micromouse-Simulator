@@ -82,38 +82,41 @@ public class Droid {
      * @param locy Specified y-coordinate
      */
     public void setTraversalMap(int locx, int locy, MazeMap mazeMap){
+        int frontM, rightM, leftM;
         mazeVal = mazeMap.getMazeVal(locx, locy);
+        System.out.format("MazeVal(%d, %d): %x\n", locx, locy, mazeVal);
         switch (curDirec) {
-            case 0: front=0; right=1; left=3; break;
-            case 1: front=1; right=2; left=0; break;
-            case 2: front=2; right=3; left=1; break;
-            case 3: front=3; right=0; left=2; break;
-            default: front=0; right=1; left=3;
+            case 0: front=0; right=1; left=3; frontM=0x01; rightM=0x02; leftM=0x08; break;
+            case 1: front=1; right=2; left=0; frontM=0x02; rightM=0x04; leftM=0x01;break;
+            case 2: front=2; right=3; left=1; frontM=0x04; rightM=0x08; leftM=0x02;break;
+            case 3: front=3; right=0; left=2; frontM=0x08; rightM=0x01; leftM=0x04;break;
+            default: front=0; right=1; left=3; frontM=0x01; rightM=0x02; leftM=0x08;
         }
+        System.out.format("(F, R, L)=(%d, %d, %d)\n", front, right, left);
 
-        if( (mazeVal & 0xf0) != 0xf0 ){
-            if( (mazeVal & 0x01) == 0x01 ){
-                traversal.setWall(locx, locy, front);
-            }else{
-                traversal.setChecked(locx, locy, front);
-            }
-            if( (mazeVal & 0x02) == 0x02 ){
-                traversal.setWall(locx, locy, right);
-            }else{
-                traversal.setChecked(locx, locy, right);
-            }
-            if( (mazeVal & 0x08) == 0x08 ){
-                traversal.setWall(locx, locy, left);
-            }else{
-                traversal.setChecked(locx, locy, left);
-            }
+        // TODO fix navigation
+        // when scanning, mask is not relative to the direction
+        if( (mazeVal & frontM) == frontM ){
+            traversal.setWall(locx, locy, front);
+        }else{
+            traversal.setChecked(locx, locy, front);
+        }
+        if( (mazeVal & rightM) == rightM ){
+            traversal.setWall(locx, locy, right);
+        }else{
+            traversal.setChecked(locx, locy, right);
+        }
+        if( (mazeVal & leftM) == leftM ){
+            traversal.setWall(locx, locy, left);
+        }else{
+            traversal.setChecked(locx, locy, left);
         }
     }
 
     /**
      * Choose next direction to move
      * @return Next direction
-     */
+     */ // TODO chooseTurn working?
     public int chooseTurn(){
         int [] neighborhood = new int[4];
         int smallest;

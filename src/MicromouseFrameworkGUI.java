@@ -240,7 +240,7 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 		for(int i=0; i<newRun.BOARD_MAX; i++){
 			for(int j=0; j<newRun.BOARD_MAX; j++){
 				board[i][j].setBorder(findBorder(j, i, false));
-                board[j][i].setText(String.format("%x", newRun.getTravVal(i, j)));
+                board[j][i].setText(String.format("%x", newRun.getPotential(i, j)));
 			}
 		}
         // Set dialogue

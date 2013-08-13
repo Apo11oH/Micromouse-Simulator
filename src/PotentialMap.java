@@ -37,7 +37,7 @@ public class PotentialMap {
 
     /**
      * Updates the potential map based on the traversal map
-     */
+     */ // TODO Fix potential map algorithm
 	public int updatePotential(int locx, int locy, TraversalMap traversal){
         boolean foundFlag;
 

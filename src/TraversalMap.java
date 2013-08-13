@@ -32,6 +32,7 @@ public class TraversalMap {
      * @param setDirec Direction of the wall (up is north(:=0))
      */
     public void setWall(int locx, int locy, int setDirec){
+        System.out.println("Set wall called. Direction: " + setDirec);
         switch(setDirec){
             case 0: traversal[locy][locx] |= 0x11;
                 if( locy>0 ) traversal[locy-1][locx] |= 0x44;
@@ -43,7 +44,7 @@ public class TraversalMap {
                 if( locx < MicromouseRun.BOARD_MAX-1 ) traversal[locy+1][locx] |= 0x11;
                 break;
             case 3: traversal[locy][locx] |= 0x88;
-                if( locx > 0 ) traversal[locx-1][locy] |= 0x22;
+                if( locx > 0 ) traversal[locy][locx-1] |= 0x22;
                 break;
         }
     }
@@ -56,6 +57,7 @@ public class TraversalMap {
      * @param setDirec Direction of the wall (up is north(:=0))
      */
     public void setChecked(int locx, int locy, int setDirec) {
+        System.out.println("Set checked called");
         switch (setDirec) {
             case 0: traversal[locy][locx] |= 0x10;
                 if( locy>0 ) traversal[locy - 1][locx] |= 0x40;
@@ -67,7 +69,7 @@ public class TraversalMap {
                 if( locx < MicromouseRun.BOARD_MAX-1 ) traversal[locy+1][locx] |= 0x10;
                 break;
             case 3: traversal[locy][locx] |= 0x80;
-                if( locx > 0 ) traversal[locx-1][locy] |= 0x20;
+                if( locx > 0 ) traversal[locy][locx-1] |= 0x20;
                 break;
         }
     }

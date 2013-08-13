@@ -7,26 +7,25 @@
     <list default="true" id="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Droid.java" afterPath="$PROJECT_DIR$/src/Droid.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MicromouseFrameworkGUI.java" afterPath="$PROJECT_DIR$/src/MicromouseFrameworkGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MicromouseRun.java" afterPath="$PROJECT_DIR$/src/MicromouseRun.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PotentialMap.java" afterPath="$PROJECT_DIR$/src/PotentialMap.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TraversalMap.java" afterPath="$PROJECT_DIR$/src/TraversalMap.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Micromouse Simulator.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$USER_HOME$/Micromouse Framework/.idea/workspace.xml" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1371062055894" ignored="false" />
-    <file path="/Dummy.txt" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376372548388" ignored="false" />
+    <file path="/Dummy.txt" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376421486787" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/vcs.xml" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1371062481262" ignored="false" />
-    <file path="/MicromouseFrameworkGUI.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376375570330" ignored="false" />
-    <file path="/Droid.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376406104982" ignored="false" />
+    <file path="/MicromouseFrameworkGUI.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376423650719" ignored="false" />
+    <file path="/Droid.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376423469585" ignored="false" />
     <file path="/MicromouseRun.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376375599414" ignored="false" />
-    <file path="/TraversalMap.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376376629879" ignored="false" />
+    <file path="/TraversalMap.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376422049469" ignored="false" />
     <file path="/README.md" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376421454839" ignored="false" />
     <file path="/a.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1374704730005" ignored="false" />
     <file path="/MazeMap.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376171058475" ignored="false" />
     <file path="/PotentialBoard.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1374972153553" ignored="false" />
     <file path="/fragment.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1374972178972" ignored="false" />
-    <file path="/PotentialMap.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376186952446" ignored="false" />
+    <file path="/PotentialMap.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376423235567" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +89,7 @@
       <file leaf-file-name="MicromouseFrameworkGUI.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MicromouseFrameworkGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="246" column="56" selection-start="7509" selection-end="7509" vertical-scroll-proportion="0.0">
+            <state line="242" column="76" selection-start="7422" selection-end="7422" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -108,7 +107,7 @@
       <file leaf-file-name="Droid.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Droid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="144" column="9" selection-start="4358" selection-end="4358" vertical-scroll-proportion="0.0">
+            <state line="125" column="85" selection-start="3930" selection-end="3930" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="docComment;method#Droid#0;class#Droid#0" expanded="false" />
                 <element signature="method#Droid#0;class#Droid#0" expanded="false" />
@@ -125,28 +124,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="54" selection-start="754" selection-end="754" vertical-scroll-proportion="0.81621623">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TraversalMap.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TraversalMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="0" selection-start="1436" selection-end="1436" vertical-scroll-proportion="0.0">
+            <state line="34" column="68" selection-start="1129" selection-end="1129" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PotentialMap.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="PotentialMap.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PotentialMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="102" selection-start="1590" selection-end="1590" vertical-scroll-proportion="0.0">
+            <state line="39" column="43" selection-start="1119" selection-end="1119" vertical-scroll-proportion="-0.26756757">
               <folding />
             </state>
           </provider>
@@ -173,12 +163,12 @@
         <option value="$PROJECT_DIR$/src/NumberGameInterface.java" />
         <option value="$PROJECT_DIR$/src/PotentialBoard.java" />
         <option value="$PROJECT_DIR$/src/MazeMap.java" />
-        <option value="$PROJECT_DIR$/src/PotentialMap.java" />
-        <option value="$PROJECT_DIR$/src/MicromouseFrameworkGUI.java" />
         <option value="$PROJECT_DIR$/src/MicromouseRun.java" />
-        <option value="$PROJECT_DIR$/src/TraversalMap.java" />
-        <option value="$PROJECT_DIR$/src/Droid.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/TraversalMap.java" />
+        <option value="$PROJECT_DIR$/src/PotentialMap.java" />
+        <option value="$PROJECT_DIR$/src/Droid.java" />
+        <option value="$PROJECT_DIR$/src/MicromouseFrameworkGUI.java" />
       </list>
     </option>
   </component>
@@ -487,23 +477,47 @@
       <created>1376372561342</created>
       <updated>1376372561342</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="status update; most ui problems fixed">
+      <created>1376421495639</created>
+      <updated>1376421495639</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24469697" sideWeight="0.28668943" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33105803" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -558,7 +572,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="almost-out-of-alpha update; coloring fixed; gui updated; added some getters" />
+    <option name="LAST_COMMIT_MESSAGE" value="status update; most ui problems fixed" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -575,6 +589,7 @@
     <MESSAGE value="batch update; still in pre-alpha stages" />
     <MESSAGE value="batch update; still in pre-alpha stages; more comments; reorganization of code" />
     <MESSAGE value="almost-out-of-alpha update; coloring fixed; gui updated; added some getters" />
+    <MESSAGE value="status update; most ui problems fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -676,26 +691,19 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="25" selection-start="509" selection-end="509" vertical-scroll-proportion="0.45357144">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MazeMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="27" selection-start="1801" selection-end="1801" vertical-scroll-proportion="2.8837838">
+        <state line="70" column="27" selection-start="1801" selection-end="1801" vertical-scroll-proportion="0.9392857">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PotentialMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="102" selection-start="1590" selection-end="1590" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MicromouseFrameworkGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="246" column="56" selection-start="7509" selection-end="7509" vertical-scroll-proportion="0.0">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -706,16 +714,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MicromouseFrameworkGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="242" column="76" selection-start="7422" selection-end="7422" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/TraversalMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1436" selection-end="1436" vertical-scroll-proportion="0.0">
+        <state line="34" column="68" selection-start="1129" selection-end="1129" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Droid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="9" selection-start="4358" selection-end="4358" vertical-scroll-proportion="0.0">
+        <state line="125" column="85" selection-start="3930" selection-end="3930" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="docComment;method#Droid#0;class#Droid#0" expanded="false" />
             <element signature="method#Droid#0;class#Droid#0" expanded="false" />
@@ -731,9 +746,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/src/PotentialMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="54" selection-start="754" selection-end="754" vertical-scroll-proportion="0.81621623">
+        <state line="39" column="43" selection-start="1119" selection-end="1119" vertical-scroll-proportion="-0.26756757">
           <folding />
         </state>
       </provider>

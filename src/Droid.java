@@ -7,6 +7,7 @@
  */
 
 public class Droid {
+    private int prevDirec;
 	private int curDirec;
     private int nxtDirec;
 	private int curLocX;
@@ -21,6 +22,7 @@ public class Droid {
      * Default constructor
      */
 	public Droid(){
+        prevDirec = 0;
 		curDirec = 0;
         nxtDirec = 0;
 		curLocX = 0;
@@ -119,33 +121,37 @@ public class Droid {
      */ // TODO chooseTurn working?
     public int chooseTurn(){
         int [] neighborhood = new int[4];
+        int travVal = traversal.getTraversal(curLocX, curLocY);
         int smallest;
         int index = 0;
 
         for(int i=0; i<4; i++){
-            neighborhood[i] = 0;
+            neighborhood[i] = (MicromouseRun.BOARD_MAX*MicromouseRun.BOARD_MAX);
         }
 
-        if( (traversal.getTraversal(curLocX, curLocY)&0x01) != 0 ){
+        if( (travVal&0x01) != 0 ){
             neighborhood[0] = potential.getPotential(curLocX, curLocY);
         }
-        if( (traversal.getTraversal(curLocX, curLocY)&0x02) != 0 ){
+        if( (travVal&0x02) != 0 ){
             neighborhood[1] = potential.getPotential(curLocX, curLocY);
         }
-        if( (traversal.getTraversal(curLocX, curLocY)&0x04) != 0 ){
+        if( (travVal&0x04) != 0 ){
             neighborhood[2] = potential.getPotential(curLocX, curLocY);
         }
-        if( (traversal.getTraversal(curLocX, curLocY)&0x08) != 0 ){
+        if( (travVal&0x08) != 0 ){
             neighborhood[3] = potential.getPotential(curLocX, curLocY);
         }
 
         smallest = neighborhood[0];
+        System.out.format("(%d", neighborhood[0]);
         for(int i=1; i<4; i++){
+            System.out.format(",%d", neighborhood[i]);
             if( smallest > neighborhood[i] ){
                 smallest = neighborhood[i];
                 index = i;
             }
         }
+        System.out.println(") & Index: " + index);
 
         return index;
     }
@@ -154,18 +160,24 @@ public class Droid {
      * Update the current coordinates of the droid
      */
     public void updateCoordinates(){
-        switch(nxtDirec){
-            // Keep current direction
-            case 0: handleCoordinates();
-                    curDirec = nxtDirec;
-                    break;
-            // Make 90 degree turn to the right
-            case 1: curDirec = nxtDirec; break;
-            // Make 180 degree turn
-            case 2: curDirec = nxtDirec; break;
-            // Make 270 degree turn to the right
-            // a.k.a. 90 degree turn to the left
-            case 3: curDirec = nxtDirec; break;
+        if(prevDirec != nxtDirec){
+            prevDirec = curDirec;
+            switch(nxtDirec){
+                // Keep current direction
+                case 0: handleCoordinates();
+                        curDirec = nxtDirec;
+                        break;
+                // Make 90 degree turn to the right
+                case 1: curDirec = nxtDirec; break;
+                // Make 180 degree turn
+                case 2: curDirec = nxtDirec; break;
+                // Make 270 degree turn to the right
+                // a.k.a. 90 degree turn to the left
+                case 3: curDirec = nxtDirec; break;
+            }
+        }else{
+            handleCoordinates();
+            curDirec = nxtDirec;
         }
     }
 

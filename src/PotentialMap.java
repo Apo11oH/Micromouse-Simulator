@@ -40,8 +40,9 @@ public class PotentialMap {
      */ // TODO Fix potential map algorithm
 	public int updatePotential(int locx, int locy, TraversalMap traversal){
         boolean foundFlag;
+        int temp;
 
-        initPotential();
+        initPotential(); // each cell init'd to (max*max)+1
 
         // Set goal cell
         potential[MicromouseRun.GOAL][MicromouseRun.GOAL] = 0;
@@ -54,23 +55,24 @@ public class PotentialMap {
                 for(int k=0; k<MicromouseRun.GOAL; k++){
                     if( potential[j][k] == i ){
                         foundFlag = false;
+                        temp = traversal.getTraversal(j, k);
                         // look at north
                         // cond. true if there is no wall or we haven't travelled there yet
-                        if((traversal.getTraversal(j, k)&0x01)==0 || (traversal.getTraversal(j, k)&0x10)==0)
+                        if((temp&0x01)==0 || (temp&0x10)==0)
                             // if ( potential of current cell + 1 is smaller than potential of cell in front
                             if(potential[j][k]+1 < potential[j-1][k])
                                 // set potential of cell in front to potential of current cell + 1
                                 potential[j-1][k] = potential[j][k] + 1;
                         // look at east
-                        if((traversal.getTraversal(j, k)&0x02)==0 || (traversal.getTraversal(j, k)&0x20)==0)
+                        if((temp&0x02)==0 || (temp&0x20)==0)
                             if(potential[j][k]+1 < potential[j][k+1])
                                 potential[j][k+1] = potential[j][k] + 1;
                         // look at south
-                        if((traversal.getTraversal(j, k)&0x04)==0 || (traversal.getTraversal(j, k)&0x40)==0)
+                        if((temp&0x04)==0 || (temp&0x40)==0)
                             if(potential[j][k]+1 < potential[j+1][k])
                                 potential[j+1][k] = potential[j][k] + 1;
                         // look at west
-                        if((traversal.getTraversal(j, k)&0x08)==0 || (traversal.getTraversal(j, k)&0x80)==0)
+                        if((temp&0x08)==0 || (temp&0x80)==0)
                             if(potential[j][k]+1 < potential[j][k-1])
                                 potential[j][k-1] = potential[j][k] + 1;
                         // look for start position

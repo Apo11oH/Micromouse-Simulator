@@ -96,7 +96,6 @@ public class Droid {
         }
         System.out.format("(F, R, L)=(%d, %d, %d)\n", front, right, left);
 
-        // TODO fix navigation
         // when scanning, mask is not relative to the direction
         if( (mazeVal & frontM) == frontM ){
             traversal.setWall(locx, locy, front);

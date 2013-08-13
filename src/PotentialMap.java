@@ -26,16 +26,6 @@ public class PotentialMap {
 	}
 
     /**
-     * Sets the potential value for a specific cell
-     * @param locx Specified x-coordinate
-     * @param locy Specified y-coordinate
-     * @param newVal The new potential value
-     */
-	public void setPotential(int locx, int locy, int newVal){
-		potential[locy][locx] = newVal;
-	}
-
-    /**
      * Updates the potential map based on the traversal map
      */ // TODO Fix potential map algorithm
 	public int updatePotential(int locx, int locy, TraversalMap traversal){

@@ -29,50 +29,54 @@ public class PotentialMap {
      * Updates the potential map based on the traversal map
      */ // TODO Fix potential map algorithm
 	public int updatePotential(int locx, int locy, TraversalMap traversal){
-        boolean foundFlag;
         int temp;
+        int upBound = MicromouseRun.BOARD_MAX*MicromouseRun.BOARD_MAX+1;
 
-        initPotential(); // each cell init'd to (max*max)+1
+        initPotential();
 
         // Set goal cell
         potential[MicromouseRun.GOAL][MicromouseRun.GOAL] = 0;
 
         // Make the potential map
-        for(int i=0; i<MicromouseRun.GOAL*MicromouseRun.GOAL; i++){
-            foundFlag = true;
+        for(int i=0; i<upBound-1; i++){
             // look for where the potential is i
-            for(int j=0; j<MicromouseRun.GOAL; j++){
-                for(int k=0; k<MicromouseRun.GOAL; k++){
+            for(int j=0; j<MicromouseRun.BOARD_MAX; j++){ // y-coordinates
+                for(int k=0; k<MicromouseRun.BOARD_MAX; k++){ // x-coordinates
                     if( potential[j][k] == i ){
-                        foundFlag = false;
-                        temp = traversal.getTraversal(j, k);
+                        temp = traversal.getTraversal(k, j);
+                        System.out.format("(%d, %d): Potential traversal: %x\n", k, j, temp);
                         // look at north
                         // cond. true if there is no wall or we haven't travelled there yet
-                        if((temp&0x01)==0 || (temp&0x10)==0)
-                            // if ( potential of current cell + 1 is smaller than potential of cell in front
-                            if(potential[j][k]+1 < potential[j-1][k])
-                                // set potential of cell in front to potential of current cell + 1
+                        if( j > 0 ){
+                            if(((temp & 0x01) != 0x01) && (potential[j-1][k] != (potential[j][k] - 1))){
+                                // set potential of cell in front to potential of current cell + 1                                      ;
                                 potential[j-1][k] = potential[j][k] + 1;
+                            }
+                        }
                         // look at east
-                        if((temp&0x02)==0 || (temp&0x20)==0)
-                            if(potential[j][k]+1 < potential[j][k+1])
-                                potential[j][k+1] = potential[j][k] + 1;
+                        if( k < MicromouseRun.BOARD_MAX-1 ){
+                            if(((temp & 0x02) != 0x02) && (potential[j][k+1] != (potential[j][k] - 1))){
+                                    potential[j][k+1] = potential[j][k] + 1;
+                            }
+                        }
                         // look at south
-                        if((temp&0x04)==0 || (temp&0x40)==0)
-                            if(potential[j][k]+1 < potential[j+1][k])
-                                potential[j+1][k] = potential[j][k] + 1;
+                        if( j < MicromouseRun.BOARD_MAX-1 ){
+                            if(((temp & 0x04) != 0x04) && (potential[j+1][k] != (potential[j][k] - 1))){
+                                    potential[j+1][k] = potential[j][k] + 1;
+                            }
+                        }
                         // look at west
-                        if((temp&0x08)==0 || (temp&0x80)==0)
-                            if(potential[j][k]+1 < potential[j][k-1])
-                                potential[j][k-1] = potential[j][k] + 1;
-                        // look for start position
-                        if(j == locx && k == locy)
+                        if( k > 0 ){
+                            if(((temp & 0x08) != 0x08) &&  (potential[j][k-1] != (potential[j][k] - 1))){
+                                    potential[j][k-1] = potential[j][k] + 1;
+                            }
+                        }
+                        if( j == locy && i == locx){
                             return 1;
+                        }
                     }
                 }
             }
-            // Could not find start
-            if(foundFlag) break;
         }
         return 0;
 	}

@@ -94,23 +94,23 @@ public class Droid {
             case 3: front=3; right=0; left=2; frontM=0x08; rightM=0x01; leftM=0x04;break;
             default: front=0; right=1; left=3; frontM=0x01; rightM=0x02; leftM=0x08;
         }
-        System.out.format("(F, R, L)=(%d, %d, %d)\n", front, right, left);
 
-        // when scanning, mask is not relative to the direction
-        if( (mazeVal & frontM) == frontM ){
-            traversal.setWall(locx, locy, front);
-        }else{
-            traversal.setChecked(locx, locy, front);
-        }
-        if( (mazeVal & rightM) == rightM ){
-            traversal.setWall(locx, locy, right);
-        }else{
-            traversal.setChecked(locx, locy, right);
-        }
-        if( (mazeVal & leftM) == leftM ){
-            traversal.setWall(locx, locy, left);
-        }else{
-            traversal.setChecked(locx, locy, left);
+        if( (mazeVal&0xf0)!=0xf0 ){
+            if( (mazeVal & frontM) == frontM ){
+                traversal.setWall(locx, locy, front);
+            }else{
+                traversal.setChecked(locx, locy, front);
+            }
+            if( (mazeVal & rightM) == rightM ){
+                traversal.setWall(locx, locy, right);
+            }else{
+                traversal.setChecked(locx, locy, right);
+            }
+            if( (mazeVal & leftM) == leftM ){
+                traversal.setWall(locx, locy, left);
+            }else{
+                traversal.setChecked(locx, locy, left);
+            }
         }
     }
 
@@ -195,6 +195,7 @@ public class Droid {
         // Set dialogue
         dialogue = "Front: " + front + ", Right: " + right + ", Left: " + left + ", Next Direc: " + nxtDirec
                     + ", MazeVal: " + mazeVal;
+        System.out.println();
     }
 
     /**

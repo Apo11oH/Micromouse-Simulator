@@ -128,17 +128,25 @@ public class Droid {
             neighborhood[i] = (MicromouseRun.BOARD_MAX*MicromouseRun.BOARD_MAX);
         }
 
-        if( (travVal&0x01) != 0 ){
-            neighborhood[0] = potential.getPotential(curLocX, curLocY);
+        if( (travVal&0x01) != 0x01 ){
+            if( curLocY > 0 ){
+                neighborhood[0] = potential.getPotential(curLocX, curLocY-1);
+            }
         }
-        if( (travVal&0x02) != 0 ){
-            neighborhood[1] = potential.getPotential(curLocX, curLocY);
+        if( (travVal&0x02) != 0x02 ){
+            if( curLocX < MicromouseRun.BOARD_MAX-1 ){
+                neighborhood[1] = potential.getPotential(curLocX+1, curLocY);
+            }
         }
-        if( (travVal&0x04) != 0 ){
-            neighborhood[2] = potential.getPotential(curLocX, curLocY);
+        if( (travVal&0x04) != 0x04 ){
+            if( curLocY < MicromouseRun.BOARD_MAX-1 ){
+                neighborhood[2] = potential.getPotential(curLocX, curLocY+1);
+            }
         }
-        if( (travVal&0x08) != 0 ){
-            neighborhood[3] = potential.getPotential(curLocX, curLocY);
+        if( (travVal&0x08) != 0x08 ){
+            if( curLocX > 0){
+                neighborhood[3] = potential.getPotential(curLocX-1, curLocY);
+            }
         }
 
         smallest = neighborhood[0];

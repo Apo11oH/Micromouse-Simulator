@@ -48,32 +48,34 @@ public class PotentialMap {
                         // look at north
                         // cond. true if there is no wall or we haven't travelled there yet
                         if( j > 0 ){
-                            if(((temp & 0x01) != 0x01) && (potential[j-1][k] != (potential[j][k] - 1))){
+                            if(((temp & 0x01) != 0x01) && (potential[j-1][k] == upBound)){
                                 // set potential of cell in front to potential of current cell + 1                                      ;
                                 potential[j-1][k] = potential[j][k] + 1;
                             }
                         }
                         // look at east
                         if( k < MicromouseRun.BOARD_MAX-1 ){
-                            if(((temp & 0x02) != 0x02) && (potential[j][k+1] != (potential[j][k] - 1))){
-                                    potential[j][k+1] = potential[j][k] + 1;
+                            if(((temp & 0x02) != 0x02) && (potential[j][k+1] == upBound)){
+                                potential[j][k+1] = potential[j][k] + 1;
                             }
                         }
                         // look at south
                         if( j < MicromouseRun.BOARD_MAX-1 ){
-                            if(((temp & 0x04) != 0x04) && (potential[j+1][k] != (potential[j][k] - 1))){
-                                    potential[j+1][k] = potential[j][k] + 1;
+                            if(((temp & 0x04) != 0x04) && (potential[j+1][k] == upBound)){
+                                potential[j+1][k] = potential[j][k] + 1;
                             }
                         }
                         // look at west
                         if( k > 0 ){
-                            if(((temp & 0x08) != 0x08) &&  (potential[j][k-1] != (potential[j][k] - 1))){
+                            if(((temp & 0x08) != 0x08) &&  (potential[j][k-1] == upBound)){
                                     potential[j][k-1] = potential[j][k] + 1;
                             }
                         }
+                        /*
                         if( j == locy && i == locx){
                             return 1;
                         }
+                        */
                     }
                 }
             }

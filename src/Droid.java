@@ -7,7 +7,6 @@
  */
 
 public class Droid {
-    private int prevDirec;
 	private int curDirec;
     private int nxtDirec;
 	private int curLocX;
@@ -17,12 +16,15 @@ public class Droid {
     private TraversalMap traversal;
     private String dialogue;
     private int front, left, right;
+    private boolean turn;
+    private boolean goal;
 
     /**
      * Default constructor
      */
 	public Droid(){
-        prevDirec = 0;
+        goal = false;
+        turn = false;
 		curDirec = 0;
         nxtDirec = 0;
 		curLocX = 0;
@@ -114,11 +116,20 @@ public class Droid {
         }
     }
 
+    public int chooseTurnHandler(){
+        if(!goal){
+            return chooseTurnForGoal();
+        }else{
+            return chooseTurnForExplore();
+        }
+    }
+
+
     /**
-     * Choose next direction to move
+     * Choose next direction to move while searching
      * @return Next direction
-     */ // TODO chooseTurn working?
-    public int chooseTurn(){
+     */
+    public int chooseTurnForGoal(){
         int [] neighborhood = new int[4];
         int travVal = traversal.getTraversal(curLocX, curLocY);
         int smallest;
@@ -150,42 +161,80 @@ public class Droid {
         }
 
         smallest = neighborhood[0];
-        System.out.format("(%d", neighborhood[0]);
+        //System.out.format("(%d", neighborhood[0]);
         for(int i=1; i<4; i++){
-            System.out.format(",%d", neighborhood[i]);
+            //System.out.format(",%d", neighborhood[i]);
             if( smallest > neighborhood[i] ){
                 smallest = neighborhood[i];
                 index = i;
             }
         }
-        System.out.println(") & Index: " + index);
+        //System.out.println(") & Index: " + index);
+
+
+        return index;
+    }
+
+    /**
+     * Choose next direction to move after center
+     * @return Next direction
+     */
+    public int chooseTurnForExplore(){
+        int [] neighborhood = new int[4];
+        int travVal = traversal.getTraversal(curLocX, curLocY);
+        int largest;
+        int index = 0;
+
+        for(int i=0; i<4; i++){
+            neighborhood[i] = 0;
+        }
+
+        if( (travVal&0x01) != 0x01 ){
+            if( curLocY > 0 ){
+                neighborhood[0] = potential.getPotential(curLocX, curLocY-1);
+            }
+        }
+        if( (travVal&0x02) != 0x02 ){
+            if( curLocX < MicromouseRun.BOARD_MAX-1 ){
+                neighborhood[1] = potential.getPotential(curLocX+1, curLocY);
+            }
+        }
+        if( (travVal&0x04) != 0x04 ){
+            if( curLocY < MicromouseRun.BOARD_MAX-1 ){
+                neighborhood[2] = potential.getPotential(curLocX, curLocY+1);
+            }
+        }
+        if( (travVal&0x08) != 0x08 ){
+            if( curLocX > 0){
+                neighborhood[3] = potential.getPotential(curLocX-1, curLocY);
+            }
+        }
+
+
+        largest = neighborhood[0];
+        for(int i=1; i<4; i++){
+            if( largest < neighborhood[i] ){
+                largest = neighborhood[i];
+                index = i;
+            }
+        }
 
         return index;
     }
 
     /**
      * Update the current coordinates of the droid
-     */
+     */ // TODO coordinate update handler not working properly
     public void updateCoordinates(){
-        if(prevDirec != nxtDirec){
-            prevDirec = curDirec;
-            switch(nxtDirec){
-                // Keep current direction
-                case 0: handleCoordinates();
-                        curDirec = nxtDirec;
-                        break;
-                // Make 90 degree turn to the right
-                case 1: curDirec = nxtDirec; break;
-                // Make 180 degree turn
-                case 2: curDirec = nxtDirec; break;
-                // Make 270 degree turn to the right
-                // a.k.a. 90 degree turn to the left
-                case 3: curDirec = nxtDirec; break;
-            }
-        }else{
-            handleCoordinates();
-            curDirec = nxtDirec;
+        if( curDirec != nxtDirec ){
+            turn = true;
         }
+        if(!turn){
+            handleCoordinates();
+        }else{
+            turn = false;
+        }
+        curDirec = nxtDirec;
     }
 
     /**
@@ -197,12 +246,15 @@ public class Droid {
         // Update Potential Map
         potential.updatePotential(curLocX, curLocY, traversal);
         // Decide where to go/make a turn
-        nxtDirec = chooseTurn();
+        nxtDirec = chooseTurnHandler();
         // Update coordinates
         updateCoordinates();
         // Set dialogue
         dialogue = "Front: " + front + ", Right: " + right + ", Left: " + left + ", Next Direc: " + nxtDirec
                     + ", MazeVal: " + mazeVal;
+        if( curLocX == MicromouseRun.GOAL && curLocY == MicromouseRun.GOAL ){
+            goal = true;
+        }
         System.out.println();
     }
 

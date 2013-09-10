@@ -27,7 +27,7 @@ public class PotentialMap {
 
     /**
      * Updates the potential map based on the traversal map
-     */ // TODO Fix potential map algorithm
+     */
 	public int updatePotential(int locx, int locy, TraversalMap traversal){
         int temp;
         int upBound = MicromouseRun.BOARD_MAX*MicromouseRun.BOARD_MAX+1;
@@ -47,7 +47,7 @@ public class PotentialMap {
                     if( potential[j][k] == i ){
                         foundFlag = true;
                         temp = traversal.getTraversal(k, j);
-                        System.out.format("(%d, %d): Potential traversal: %x\n", k, j, temp);
+                        //sSystem.out.format("(%d, %d): Potential traversal: %x\n", k, j, temp);
                         // look at north
                         // cond. true if there is no wall or we haven't travelled there yet
                         if( j > 0 ){

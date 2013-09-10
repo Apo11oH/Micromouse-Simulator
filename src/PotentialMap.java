@@ -31,6 +31,7 @@ public class PotentialMap {
 	public int updatePotential(int locx, int locy, TraversalMap traversal){
         int temp;
         int upBound = MicromouseRun.BOARD_MAX*MicromouseRun.BOARD_MAX+1;
+        boolean foundFlag = false;
 
         initPotential();
 
@@ -39,10 +40,12 @@ public class PotentialMap {
 
         // Make the potential map
         for(int i=0; i<upBound-1; i++){
+            foundFlag = false;
             // look for where the potential is i
             for(int j=0; j<MicromouseRun.BOARD_MAX; j++){ // y-coordinates
                 for(int k=0; k<MicromouseRun.BOARD_MAX; k++){ // x-coordinates
                     if( potential[j][k] == i ){
+                        foundFlag = true;
                         temp = traversal.getTraversal(k, j);
                         System.out.format("(%d, %d): Potential traversal: %x\n", k, j, temp);
                         // look at north
@@ -71,14 +74,10 @@ public class PotentialMap {
                                     potential[j][k-1] = potential[j][k] + 1;
                             }
                         }
-                        /*
-                        if( j == locy && i == locx){
-                            return 1;
-                        }
-                        */
                     }
                 }
             }
+            if(!foundFlag){ break; }
         }
         return 0;
 	}

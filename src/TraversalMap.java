@@ -32,7 +32,7 @@ public class TraversalMap {
      * @param setDirec Direction of the wall (up is north(:=0))
      */
     public void setWall(int locx, int locy, int setDirec){
-        System.out.println("Set wall called. Direction: " + setDirec);
+        //System.out.println("Set wall called. Direction: " + setDirec);
         switch(setDirec){
             case 0: traversal[locy][locx] |= 0x11;
                 if( locy>0 ) traversal[locy-1][locx] |= 0x44;
@@ -57,7 +57,7 @@ public class TraversalMap {
      * @param setDirec Direction of the wall (up is north(:=0))
      */
     public void setChecked(int locx, int locy, int setDirec) {
-        System.out.println("Set checked called");
+        //System.out.println("Set checked called");
         switch (setDirec) {
             case 0: traversal[locy][locx] |= 0x10;
                 if( locy>0 ) traversal[locy - 1][locx] |= 0x40;
@@ -70,6 +70,41 @@ public class TraversalMap {
                 break;
             case 3: traversal[locy][locx] |= 0x80;
                 if( locx > 0 ) traversal[locy][locx-1] |= 0x20;
+                break;
+        }
+    }
+
+    /**
+     * Plugs the dead ends by making them unaccessible
+     * @param locx Specified x-coordinate
+     * @param locy Specified y-coordinate
+     * @param setDirec Direction of the wall (up is north(:=0))
+     */
+    public void plugDeadEnd(int locx, int locy, int setDirec){
+        switch(setDirec){
+            case 0:
+                if( (traversal[locy][locx]&0x0E) == 0x0E ){
+                    traversal[locy][locx] |= 0x11;
+                    if( locy>0 ) traversal[locy-1][locx] |= 0x44;
+                }
+                break;
+            case 1:
+                if( (traversal[locy][locx]&0x0D) == 0x0D ){
+                    traversal[locy][locx] |= 0x22;
+                    if( locx < MicromouseRun.BOARD_MAX-1 ) traversal[locy][locx+1] |= 0x88;
+                }
+                break;
+            case 2:
+                if( (traversal[locy][locx]&0x0B) == 0x0B ){
+                    traversal[locy][locx] |= 0x44;
+                    if( locy < MicromouseRun.BOARD_MAX-1 ) traversal[locy+1][locx] |= 0x11;
+                }
+                break;
+            case 3:
+                if( (traversal[locy][locx]&0x07) == 0x07 ){
+                    traversal[locy][locx] |= 0x88;
+                    if( locx > 0 ) traversal[locy][locx-1] |= 0x22;
+                }
                 break;
         }
     }
@@ -90,7 +125,7 @@ public class TraversalMap {
                 traversal[i][j] = 0;
             }
         }
-        traversal[MicromouseRun.BOARD_MAX-1][0] = 0x44;
+        traversal[MicromouseRun.BOARD_MAX-1][0] = 0x40;
     }
 
 }

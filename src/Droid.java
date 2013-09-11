@@ -88,7 +88,7 @@ public class Droid {
     public void setTraversalMap(int locx, int locy, MazeMap mazeMap){
         int frontM, rightM, leftM;
         mazeVal = mazeMap.getMazeVal(locx, locy);
-        System.out.format("MazeVal(%d, %d): %x\n", locx, locy, mazeVal);
+        //System.out.format("MazeVal(%d, %d): %x\n", locx, locy, mazeVal);
         switch (curDirec) {
             case 0: front=0; right=1; left=3; frontM=0x01; rightM=0x02; leftM=0x08; break;
             case 1: front=1; right=2; left=0; frontM=0x02; rightM=0x04; leftM=0x01;break;
@@ -139,25 +139,17 @@ public class Droid {
             neighborhood[i] = (MicromouseRun.BOARD_MAX*MicromouseRun.BOARD_MAX);
         }
 
-        if( (travVal&0x01) != 0x01 ){
-            if( curLocY > 0 ){
-                neighborhood[0] = potential.getPotential(curLocX, curLocY-1);
-            }
+        if( (travVal&0x01) != 0x01 && curLocY > 0 ){
+            neighborhood[0] = potential.getPotential(curLocX, curLocY-1);
         }
-        if( (travVal&0x02) != 0x02 ){
-            if( curLocX < MicromouseRun.BOARD_MAX-1 ){
-                neighborhood[1] = potential.getPotential(curLocX+1, curLocY);
-            }
+        if( (travVal&0x02) != 0x02 && curLocX < MicromouseRun.BOARD_MAX-1 ){
+            neighborhood[1] = potential.getPotential(curLocX+1, curLocY);
         }
-        if( (travVal&0x04) != 0x04 ){
-            if( curLocY < MicromouseRun.BOARD_MAX-1 ){
+        if( (travVal&0x04) != 0x04 && curLocY < MicromouseRun.BOARD_MAX-1 ){
                 neighborhood[2] = potential.getPotential(curLocX, curLocY+1);
-            }
         }
-        if( (travVal&0x08) != 0x08 ){
-            if( curLocX > 0){
-                neighborhood[3] = potential.getPotential(curLocX-1, curLocY);
-            }
+        if( (travVal&0x08) != 0x08 && curLocX > 0 ){
+            neighborhood[3] = potential.getPotential(curLocX-1, curLocY);
         }
 
         smallest = neighborhood[0];
@@ -170,7 +162,6 @@ public class Droid {
             }
         }
         //System.out.println(") & Index: " + index);
-
 
         return index;
     }
@@ -189,42 +180,48 @@ public class Droid {
             neighborhood[i] = 0;
         }
 
-        if( (travVal&0x01) != 0x01 ){
-            if( curLocY > 0 ){
-                neighborhood[0] = potential.getPotential(curLocX, curLocY-1);
+        if( (travVal&0x01) != 0x01 && curLocY > 0 ){
+            neighborhood[0] = potential.getPotential(curLocX, curLocY-1);
+            if( (traversal.getTraversal(curLocX, curLocY-1)&0xf0) != 0xf0 ){
+                neighborhood[0] = MicromouseRun.BOARD_MAX;
             }
         }
-        if( (travVal&0x02) != 0x02 ){
-            if( curLocX < MicromouseRun.BOARD_MAX-1 ){
-                neighborhood[1] = potential.getPotential(curLocX+1, curLocY);
+        if( (travVal&0x02) != 0x02 && curLocX < MicromouseRun.BOARD_MAX-1 ){
+            neighborhood[1] = potential.getPotential(curLocX+1, curLocY);
+            if( (traversal.getTraversal(curLocX+1, curLocY)&0xf0) != 0xf0 ){
+                neighborhood[1] = MicromouseRun.BOARD_MAX;
             }
         }
-        if( (travVal&0x04) != 0x04 ){
-            if( curLocY < MicromouseRun.BOARD_MAX-1 ){
-                neighborhood[2] = potential.getPotential(curLocX, curLocY+1);
+        if( (travVal&0x04) != 0x04 && curLocY < MicromouseRun.BOARD_MAX-1 ){
+            neighborhood[2] = potential.getPotential(curLocX, curLocY+1);
+            if( (traversal.getTraversal(curLocX, curLocY+1)&0xf0) != 0xf0 ){
+                neighborhood[2] = MicromouseRun.BOARD_MAX;
             }
         }
-        if( (travVal&0x08) != 0x08 ){
-            if( curLocX > 0){
-                neighborhood[3] = potential.getPotential(curLocX-1, curLocY);
+        if( (travVal&0x08) != 0x08 && curLocX > 0 ){
+            neighborhood[3] = potential.getPotential(curLocX-1, curLocY);
+            if( (traversal.getTraversal(curLocX-1, curLocY)&0xf0) != 0xf0 ){
+                neighborhood[3] = MicromouseRun.BOARD_MAX;
             }
         }
-
 
         largest = neighborhood[0];
+        System.out.format("(%d", neighborhood[0]);
         for(int i=1; i<4; i++){
+            System.out.format(",%d", neighborhood[i]);
             if( largest < neighborhood[i] ){
                 largest = neighborhood[i];
                 index = i;
             }
         }
+        System.out.println(") & Index: " + index);
 
         return index;
     }
 
     /**
      * Update the current coordinates of the droid
-     */ // TODO coordinate update handler not working properly
+     */
     public void updateCoordinates(){
         if( curDirec != nxtDirec ){
             turn = true;
@@ -241,17 +238,33 @@ public class Droid {
      * Droid make a move
      */
     public void makeNextMove(MazeMap mazeMap){
+        double start;
+        double stop;
         // Scan area and update Traversal Map
+        start = System.nanoTime();
         setTraversalMap(curLocX, curLocY, mazeMap);
+        stop = System.nanoTime();
+        System.out.format("Scan: \t\t%f ns\n", stop-start);
         // Update Potential Map
+        start = System.nanoTime();
         potential.updatePotential(curLocX, curLocY, traversal);
+        stop = System.nanoTime();
+        System.out.format("Update Potential: \t%f ns\n", stop-start);
         // Decide where to go/make a turn
+        start = System.nanoTime();
         nxtDirec = chooseTurnHandler();
+        stop = System.nanoTime();
+        System.out.format("Choose direction: \t%f ns\n", stop-start);
+        // If current was dead end, plug it
+        start = System.nanoTime();
+        traversal.plugDeadEnd(curLocX, curLocY, curDirec);
+        stop = System.nanoTime();
+        System.out.format("Plug Dead End: \t%f ns\n", stop-start);
         // Update coordinates
+        start = System.nanoTime();
         updateCoordinates();
-        // Set dialogue
-        dialogue = "Front: " + front + ", Right: " + right + ", Left: " + left + ", Next Direc: " + nxtDirec
-                    + ", MazeVal: " + mazeVal;
+        stop = System.nanoTime();
+        System.out.format("Update coordinates: \t%f ns\n", stop-start);
         if( curLocX == MicromouseRun.GOAL && curLocY == MicromouseRun.GOAL ){
             goal = true;
         }

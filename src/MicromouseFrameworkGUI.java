@@ -34,7 +34,7 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 	public MicromouseFrameworkGUI(){
 		super("Micromouse Framework GUI");
 
-		JPanel panel = new JPanel();
+		JPanel panel = new JPanel(true);
 		panel.setLayout(new BorderLayout());
 	
 		/*
@@ -86,13 +86,14 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 		/*
 		 * GRID: CENTER
 		 */
-		JPanel p3 = new JPanel(new GridLayout(16, 16));
+		JPanel p3 = new JPanel(new GridLayout(16, 16), true);
 		// make board GUI
 		board = new JButton[newRun.BOARD_MAX][newRun.BOARD_MAX];
 		for(int i=0; i<newRun.BOARD_MAX; i++){
 			for(int j=0; j<newRun.BOARD_MAX; j++){
 				board[i][j] = new JButton("" + newRun.getPotential(j, i));
                 board[i][j].setBackground(Color.green);
+                board[i][j].setOpaque(true);
 				p3.add(board[i][j]);
 			}
 		}
@@ -244,7 +245,7 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 			}
 		}
         // Set dialogue
-        dialogue.setText(newRun.getDialogue());
+        //dialogue.setText(newRun.getDialogue());
         // Update heading
         curDirecVal.setText(newRun.getCurrentDirec());
         // Update location
@@ -253,7 +254,7 @@ public class MicromouseFrameworkGUI extends JFrame implements ActionListener{
 
 	public static void main(String[] args) {
 		MicromouseFrameworkGUI newGUI = new MicromouseFrameworkGUI();
-		newGUI.setSize(1000, 600); // width, height
+		newGUI.setSize(1100, 700); // width, height
 		newGUI.setVisible(true);
 		newGUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

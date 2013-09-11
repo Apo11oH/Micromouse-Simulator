@@ -4,28 +4,28 @@
     <bookmark url="file://$PROJECT_DIR$" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" name="Default" comment="">
+    <list default="true" id="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" name="Default" comment="BETA!; Possible fix for chooseTurn() and potentialUpdate() implemented">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Droid.java" afterPath="$PROJECT_DIR$/src/Droid.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MicromouseFrameworkGUI.java" afterPath="$PROJECT_DIR$/src/MicromouseFrameworkGUI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PotentialMap.java" afterPath="$PROJECT_DIR$/src/PotentialMap.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TraversalMap.java" afterPath="$PROJECT_DIR$/src/TraversalMap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Micromouse Simulator.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$USER_HOME$/Micromouse Framework/.idea/workspace.xml" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1371062055894" ignored="false" />
-    <file path="/Dummy.txt" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1378853344868" ignored="false" />
+    <file path="/Dummy.txt" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1378871062811" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/vcs.xml" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1371062481262" ignored="false" />
-    <file path="/MicromouseFrameworkGUI.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376423650719" ignored="false" />
-    <file path="/Droid.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1378853418302" ignored="false" />
+    <file path="/MicromouseFrameworkGUI.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1378861895251" ignored="false" />
+    <file path="/Droid.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1378878599343" ignored="false" />
     <file path="/MicromouseRun.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376375599414" ignored="false" />
-    <file path="/TraversalMap.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1378845227887" ignored="false" />
+    <file path="/TraversalMap.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1378871127629" ignored="false" />
     <file path="/README.md" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376421454839" ignored="false" />
     <file path="/a.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376781417980" ignored="false" />
     <file path="/MazeMap.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376171058475" ignored="false" />
     <file path="/PotentialBoard.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1374972153553" ignored="false" />
     <file path="/fragment.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1374972178972" ignored="false" />
-    <file path="/PotentialMap.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1378844448397" ignored="false" />
+    <file path="/PotentialMap.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1378860931360" ignored="false" />
     <file path="/MIT Licence.txt" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376928997608" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +91,7 @@
       <file leaf-file-name="MicromouseFrameworkGUI.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MicromouseFrameworkGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="219" column="63" selection-start="6801" selection-end="6801" vertical-scroll-proportion="0.0">
+            <state line="66" column="93" selection-start="2168" selection-end="2168" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -100,7 +100,7 @@
       <file leaf-file-name="MicromouseRun.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MicromouseRun.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="107" column="30" selection-start="2692" selection-end="2692" vertical-scroll-proportion="0.0">
+            <state line="79" column="23" selection-start="2024" selection-end="2024" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -109,7 +109,7 @@
       <file leaf-file-name="Droid.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Droid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="259" column="23" selection-start="7839" selection-end="7839" vertical-scroll-proportion="1.0">
+            <state line="185" column="58" selection-start="5881" selection-end="5881" vertical-scroll-proportion="0.30991736">
               <folding />
             </state>
           </provider>
@@ -118,7 +118,7 @@
       <file leaf-file-name="TraversalMap.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TraversalMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="68" selection-start="1506" selection-end="1506" vertical-scroll-proportion="0.0">
+            <state line="49" column="74" selection-start="1773" selection-end="1773" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -127,7 +127,7 @@
       <file leaf-file-name="PotentialMap.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PotentialMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="7" selection-start="789" selection-end="789" vertical-scroll-proportion="0.0">
+            <state line="72" column="32" selection-start="2947" selection-end="2947" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -156,8 +156,8 @@
         <option value="$PROJECT_DIR$/src/MazeMap.java" />
         <option value="$PROJECT_DIR$/src/MicromouseRun.java" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/MicromouseFrameworkGUI.java" />
         <option value="$PROJECT_DIR$/MIT Licence.txt" />
+        <option value="$PROJECT_DIR$/src/MicromouseFrameworkGUI.java" />
         <option value="$PROJECT_DIR$/src/PotentialMap.java" />
         <option value="$PROJECT_DIR$/src/TraversalMap.java" />
         <option value="$PROJECT_DIR$/src/Droid.java" />
@@ -165,9 +165,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-3" />
-    <option name="width" value="1446" />
-    <option name="height" value="877" />
+    <option name="y" value="22" />
+    <option name="width" value="1440" />
+    <option name="height" value="874" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -246,7 +246,7 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
-    <property name="FullScreen" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -467,7 +467,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="0" width="1446" height="877" extended-state="6" />
+    <frame x="0" y="22" width="1440" height="874" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32831737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -484,7 +484,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24469697" sideWeight="0.6757679" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32284543" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32095492" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -636,37 +636,37 @@
         <state line="3" column="22" selection-start="57" selection-end="57" vertical-scroll-proportion="0.090747334" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MicromouseFrameworkGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="93" selection-start="2168" selection-end="2168" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/PotentialMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="7" selection-start="789" selection-end="789" vertical-scroll-proportion="0.0">
+        <state line="72" column="32" selection-start="2947" selection-end="2947" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MicromouseRun.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="30" selection-start="2692" selection-end="2692" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MicromouseFrameworkGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="219" column="63" selection-start="6801" selection-end="6801" vertical-scroll-proportion="0.0">
+        <state line="79" column="23" selection-start="2024" selection-end="2024" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TraversalMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="68" selection-start="1506" selection-end="1506" vertical-scroll-proportion="0.0">
+        <state line="49" column="74" selection-start="1773" selection-end="1773" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Droid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="259" column="23" selection-start="7839" selection-end="7839" vertical-scroll-proportion="1.0">
+        <state line="185" column="58" selection-start="5881" selection-end="5881" vertical-scroll-proportion="0.30991736">
           <folding />
         </state>
       </provider>

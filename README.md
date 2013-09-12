@@ -12,7 +12,7 @@ Future plans include,
 
 
 ABOUT MAZE DATA:
-The wall location for each cell is represented by an integer where each
+The wall location for each cell is represented by hexadecimal where each
 direction is represented as:
 North = 1
 East = 2

@@ -17,6 +17,7 @@ public class MazeMap{
 	private BufferedReader reader;
 	private String line = null;
 	private String parts [] = null;
+    int RAD = 16;
 
     /**
      * Default constructor
@@ -47,7 +48,7 @@ public class MazeMap{
 			while( (line = reader.readLine()) != null ){
 				parts = line.split("\\s");
 				for( int j=0; j<MicromouseRun.BOARD_MAX; j++ ){
-					mazeMap[i][j] = Integer.valueOf(parts[j].trim());
+					mazeMap[i][j] = Integer.parseInt(parts[j].trim(), RAD);
 				}
 				i++;
 			}

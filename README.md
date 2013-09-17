@@ -14,10 +14,10 @@ Future plans include,
 ABOUT MAZE DATA:
 The wall location for each cell is represented by hexadecimal where each
 direction is represented as:
-North = 1
-East = 2
-South = 4
-West = 8
+North = 0x01
+East = 0x02
+South = 0x04
+West = 0x08
 ex. if there are walls in the North, East and South, the cell value will be 11
 
 Current Bugs:

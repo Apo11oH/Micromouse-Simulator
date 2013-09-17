@@ -11,13 +11,13 @@
     <ignored path="Micromouse Simulator.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$USER_HOME$/Micromouse Framework/.idea/workspace.xml" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1371062055894" ignored="false" />
-    <file path="/Dummy.txt" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1379438904824" ignored="false" />
+    <file path="/Dummy.txt" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1379440775662" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/vcs.xml" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1371062481262" ignored="false" />
     <file path="/MicromouseFrameworkGUI.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1378861895251" ignored="false" />
     <file path="/Droid.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1379133709016" ignored="false" />
     <file path="/MicromouseRun.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376375599414" ignored="false" />
     <file path="/TraversalMap.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1378871127629" ignored="false" />
-    <file path="/README.md" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1379438979399" ignored="false" />
+    <file path="/README.md" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1379440801360" ignored="false" />
     <file path="/a.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376781417980" ignored="false" />
     <file path="/MazeMap.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1379004586081" ignored="false" />
     <file path="/PotentialBoard.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1374972153553" ignored="false" />
@@ -124,7 +124,7 @@
       <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="64" selection-start="699" selection-end="699" vertical-scroll-proportion="0.7259787">
+            <state line="19" column="10" selection-start="530" selection-end="530" vertical-scroll-proportion="0.57678574">
               <folding />
             </state>
           </provider>
@@ -497,7 +497,11 @@
       <created>1379348445074</created>
       <updated>1379348445074</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="BETA!; README updated">
+      <created>1379440779652</created>
+      <updated>1379440779652</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -532,6 +536,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32423207" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24469697" sideWeight="0.28668943" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282313" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33105803" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2947761" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -541,7 +546,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33105803" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39795917" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -588,7 +592,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="BETA!;" />
+    <option name="LAST_COMMIT_MESSAGE" value="BETA!; README updated" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -613,6 +617,7 @@
     <MESSAGE value="BETA!; changed maze data to hex format; added new maze; modified map making function to take hex format data" />
     <MESSAGE value="BETA!; updated README" />
     <MESSAGE value="BETA!;" />
+    <MESSAGE value="BETA!; README updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -721,7 +726,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="64" selection-start="699" selection-end="699" vertical-scroll-proportion="0.7259787">
+        <state line="19" column="10" selection-start="530" selection-end="530" vertical-scroll-proportion="0.57678574">
           <folding />
         </state>
       </provider>

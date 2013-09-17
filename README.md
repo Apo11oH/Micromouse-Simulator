@@ -20,11 +20,8 @@ South = 4
 West = 8
 ex. if there are walls in the North, East and South, the cell value will be 11
 
-Might change this to hex in the future...
-
 Current Bugs:
-Potential map not working
-Nav system borked
-Temporaraly printing out Traversal values in each cell
+No bugs, I can find.
+Working on the engine function after reaching the middle though.
 
 Team S.H.I.E.L.D.

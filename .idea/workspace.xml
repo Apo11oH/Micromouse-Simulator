@@ -5,19 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Droid.java" afterPath="$PROJECT_DIR$/src/Droid.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Micromouse Simulator.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$USER_HOME$/Micromouse Framework/.idea/workspace.xml" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1371062055894" ignored="false" />
-    <file path="/Dummy.txt" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1379301091429" ignored="false" />
+    <file path="/Dummy.txt" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1379438904824" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/vcs.xml" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1371062481262" ignored="false" />
     <file path="/MicromouseFrameworkGUI.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1378861895251" ignored="false" />
     <file path="/Droid.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1379133709016" ignored="false" />
     <file path="/MicromouseRun.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376375599414" ignored="false" />
     <file path="/TraversalMap.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1378871127629" ignored="false" />
-    <file path="/README.md" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1379006561519" ignored="false" />
+    <file path="/README.md" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1379438979399" ignored="false" />
     <file path="/a.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376781417980" ignored="false" />
     <file path="/MazeMap.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1379004586081" ignored="false" />
     <file path="/PotentialBoard.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1374972153553" ignored="false" />
@@ -112,10 +112,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Droid.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Droid.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Droid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="236" column="71" selection-start="7960" selection-end="7960" vertical-scroll-proportion="-0.028571429">
+            <state line="236" column="71" selection-start="7960" selection-end="7960" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="64" selection-start="699" selection-end="699" vertical-scroll-proportion="0.7259787">
               <folding />
             </state>
           </provider>
@@ -167,8 +176,8 @@
         <option value="$PROJECT_DIR$/src/MazeMap.java" />
         <option value="$PROJECT_DIR$/MazeData/IEEE_UCSD_CAMM_2013(hex).dat" />
         <option value="$PROJECT_DIR$/MazeData/ALL_AMERICAN_2013.dat" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/Droid.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -241,6 +250,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -260,37 +270,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Micromouse Simulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Micromouse-Simulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Micromouse Simulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Micromouse-Simulator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MazeData" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -305,12 +286,12 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -356,6 +337,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -381,19 +375,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -512,7 +493,11 @@
       <created>1379006587981</created>
       <updated>1379006587981</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="BETA!;">
+      <created>1379348445074</created>
+      <updated>1379348445074</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -547,7 +532,6 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32423207" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24469697" sideWeight="0.28668943" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282313" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33105803" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2947761" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -557,6 +541,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33105803" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39795917" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -603,7 +588,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="BETA!; updated README" />
+    <option name="LAST_COMMIT_MESSAGE" value="BETA!;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -627,6 +612,7 @@
     <MESSAGE value="BETA!; Possible fix for chooseTurn() and potentialUpdate() implemented" />
     <MESSAGE value="BETA!; changed maze data to hex format; added new maze; modified map making function to take hex format data" />
     <MESSAGE value="BETA!; updated README" />
+    <MESSAGE value="BETA!;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -705,11 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="73" selection-start="452" selection-end="452" vertical-scroll-proportion="0.425" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MicromouseRun.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="79" column="23" selection-start="2024" selection-end="2024" vertical-scroll-proportion="0.0">
@@ -733,7 +714,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Droid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="236" column="71" selection-start="7960" selection-end="7960" vertical-scroll-proportion="-0.028571429">
+        <state line="236" column="71" selection-start="7960" selection-end="7960" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="64" selection-start="699" selection-end="699" vertical-scroll-proportion="0.7259787">
           <folding />
         </state>
       </provider>

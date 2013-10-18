@@ -13,6 +13,9 @@ public class PotentialMap {
 	public PotentialMap(){
 		initPotential();
 		potential[MicromouseRun.GOAL][MicromouseRun.GOAL] = 0;
+		potential[MicromouseRun.GOAL+1][MicromouseRun.GOAL] = 0;
+		potential[MicromouseRun.GOAL][MicromouseRun.GOAL+1] = 0;
+		potential[MicromouseRun.GOAL+1][MicromouseRun.GOAL+1] = 0;
 	}
 
     /**
@@ -37,6 +40,9 @@ public class PotentialMap {
 
         // Set goal cell
         potential[MicromouseRun.GOAL][MicromouseRun.GOAL] = 0;
+        potential[MicromouseRun.GOAL+1][MicromouseRun.GOAL] = 0;
+        potential[MicromouseRun.GOAL][MicromouseRun.GOAL+1] = 0;
+        potential[MicromouseRun.GOAL+1][MicromouseRun.GOAL+1] = 0;
 
         // Make the potential map
         for(int i=0; i<upBound-1; i++){

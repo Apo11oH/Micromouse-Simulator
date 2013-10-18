@@ -4,26 +4,30 @@
     <bookmark url="file://$PROJECT_DIR$" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" name="Default" comment="">
+    <list default="true" id="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" name="Default" comment="BETA!; README updated">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MazeData/ALL_AMERICAN_2013.dat" afterPath="$PROJECT_DIR$/MazeData/ALL_AMERICAN_2013.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Droid.java" afterPath="$PROJECT_DIR$/src/Droid.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PotentialMap.java" afterPath="$PROJECT_DIR$/src/PotentialMap.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Micromouse Simulator.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$USER_HOME$/Micromouse Framework/.idea/workspace.xml" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1371062055894" ignored="false" />
-    <file path="/Dummy.txt" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1379440775662" ignored="false" />
+    <file path="/Dummy.txt" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1382057787814" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/vcs.xml" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1371062481262" ignored="false" />
     <file path="/MicromouseFrameworkGUI.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1378861895251" ignored="false" />
-    <file path="/Droid.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1379133709016" ignored="false" />
+    <file path="/Droid.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1380227127002" ignored="false" />
     <file path="/MicromouseRun.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376375599414" ignored="false" />
     <file path="/TraversalMap.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1378871127629" ignored="false" />
-    <file path="/README.md" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1379440801360" ignored="false" />
+    <file path="/README.md" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1382057815028" ignored="false" />
     <file path="/a.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376781417980" ignored="false" />
     <file path="/MazeMap.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1379004586081" ignored="false" />
     <file path="/PotentialBoard.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1374972153553" ignored="false" />
     <file path="/fragment.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1374972178972" ignored="false" />
     <file path="/PotentialMap.java" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1378860931360" ignored="false" />
     <file path="/MIT Licence.txt" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1376928997608" ignored="false" />
+    <file path="/ALL_AMERICAN_2013.dat" changelist="ee3d486d-e41f-40d9-abb6-77b8f304e7b1" time="1380228203288" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,15 +98,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MazeMap.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MazeMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="60" selection-start="1782" selection-end="1782" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MicromouseRun.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MicromouseRun.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -115,7 +110,7 @@
       <file leaf-file-name="Droid.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Droid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="236" column="71" selection-start="7960" selection-end="7960" vertical-scroll-proportion="0.0">
+            <state line="213" column="78" selection-start="7413" selection-end="7413" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -124,7 +119,7 @@
       <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="10" selection-start="530" selection-end="530" vertical-scroll-proportion="0.57678574">
+            <state line="25" column="6" selection-start="705" selection-end="705" vertical-scroll-proportion="0.75622773">
               <folding />
             </state>
           </provider>
@@ -133,7 +128,7 @@
       <file leaf-file-name="TraversalMap.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TraversalMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="5" selection-start="1773" selection-end="1773" vertical-scroll-proportion="0.0">
+            <state line="80" column="49" selection-start="3000" selection-end="3000" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -142,7 +137,7 @@
       <file leaf-file-name="PotentialMap.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PotentialMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="121" selection-start="3140" selection-end="3140" vertical-scroll-proportion="0.0">
+            <state line="51" column="111" selection-start="1788" selection-end="1788" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -171,12 +166,12 @@
         <option value="$PROJECT_DIR$/src/MicromouseRun.java" />
         <option value="$PROJECT_DIR$/MIT Licence.txt" />
         <option value="$PROJECT_DIR$/src/MicromouseFrameworkGUI.java" />
-        <option value="$PROJECT_DIR$/src/PotentialMap.java" />
         <option value="$PROJECT_DIR$/src/TraversalMap.java" />
         <option value="$PROJECT_DIR$/src/MazeMap.java" />
         <option value="$PROJECT_DIR$/MazeData/IEEE_UCSD_CAMM_2013(hex).dat" />
-        <option value="$PROJECT_DIR$/MazeData/ALL_AMERICAN_2013.dat" />
+        <option value="$PROJECT_DIR$/src/PotentialMap.java" />
         <option value="$PROJECT_DIR$/src/Droid.java" />
+        <option value="$PROJECT_DIR$/MazeData/ALL_AMERICAN_2013.dat" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -250,8 +245,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -267,6 +262,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Micromouse-Simulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Micromouse Simulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Micromouse-Simulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Micromouse Simulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Micromouse-Simulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MazeData" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -501,7 +524,11 @@
       <created>1379440779652</created>
       <updated>1379440779652</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="BETA!; README updated">
+      <created>1379440809108</created>
+      <updated>1379440809108</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -536,7 +563,6 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32423207" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24469697" sideWeight="0.28668943" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282313" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33105803" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2947761" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -546,6 +572,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33105803" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39795917" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -650,9 +677,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MazeMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="37" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="17" column="37" selection-start="482" selection-end="482" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MicromouseFrameworkGUI.java">
@@ -672,18 +697,6 @@
         <state line="3" column="22" selection-start="57" selection-end="57" vertical-scroll-proportion="0.090747334" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MicromouseFrameworkGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="98" selection-start="2434" selection-end="2434" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MazeData/ALL_AMERICAN_2013.dat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="45" selection-start="573" selection-end="573" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MazeData/IEEE_UCSD_CAMM_2013.dat">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="64" selection-start="194" selection-end="194" vertical-scroll-proportion="0.100196466" />
@@ -691,7 +704,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MazeMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="60" selection-start="1782" selection-end="1782" vertical-scroll-proportion="0.0">
+        <state line="67" column="60" selection-start="1782" selection-end="1782" vertical-scroll-proportion="1.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MicromouseFrameworkGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="98" selection-start="2434" selection-end="2434" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -705,28 +723,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PotentialMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="121" selection-start="3140" selection-end="3140" vertical-scroll-proportion="0.0">
+        <state line="51" column="111" selection-start="1788" selection-end="1788" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TraversalMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="5" selection-start="1773" selection-end="1773" vertical-scroll-proportion="0.0">
+        <state line="80" column="49" selection-start="3000" selection-end="3000" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/MazeData/ALL_AMERICAN_2013.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="38" selection-start="374" selection-end="374" vertical-scroll-proportion="0.2125" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Droid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="236" column="71" selection-start="7960" selection-end="7960" vertical-scroll-proportion="0.0">
+        <state line="213" column="78" selection-start="7413" selection-end="7413" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="10" selection-start="530" selection-end="530" vertical-scroll-proportion="0.57678574">
+        <state line="25" column="6" selection-start="705" selection-end="705" vertical-scroll-proportion="0.75622773">
           <folding />
         </state>
       </provider>

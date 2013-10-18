@@ -17,14 +17,16 @@ public class Droid {
     private String dialogue;
     private int front, left, right;
     private boolean turn;
-    private boolean goal;
+    private boolean homing;
+    private boolean trenchRun;
 
     /**
      * Default constructor
      */
 	public Droid(){
-        goal = false;
+        homing = false;
         turn = false;
+        trenchRun = false;
 		curDirec = 0;
         nxtDirec = 0;
 		curLocX = 0;
@@ -117,10 +119,10 @@ public class Droid {
     }
 
     public int chooseTurnHandler(){
-        if(!goal){
+        if(!homing){
             return chooseTurnForGoal();
         }else{
-            return chooseTurnForExplore();
+            return chooseTurnReturn();
         }
     }
 
@@ -168,9 +170,11 @@ public class Droid {
 
     /**
      * Choose next direction to move after center
+     * Priority (from highest):
+     *      unexplored cell -> left -> down (latter two closer to home)
      * @return Next direction
      */
-    public int chooseTurnForExplore(){
+    public int chooseTurnReturn(){
         int [] neighborhood = new int[4];
         int travVal = traversal.getTraversal(curLocX, curLocY);
         int largest;
@@ -183,7 +187,7 @@ public class Droid {
         if( (travVal&0x01) != 0x01 && curLocY > 0 ){
             System.out.format("N: %x\n", (traversal.getTraversal(curLocX, curLocY-1)&0xf0));
             if( (traversal.getTraversal(curLocX, curLocY-1)&0xf0) == 0xf0 ){
-                neighborhood[0] = potential.getPotential(curLocX, curLocY-1);
+                neighborhood[0] = potential.getPotential(curLocX, curLocY-1)+1;
             }else{
                 neighborhood[0] = MicromouseRun.BOARD_MAX*MicromouseRun.BOARD_MAX;
             }
@@ -191,7 +195,7 @@ public class Droid {
         if( (travVal&0x02) != 0x02 && curLocX < MicromouseRun.BOARD_MAX-1 ){
             System.out.format("E: %x\n", (traversal.getTraversal(curLocX+1, curLocY)&0xf0));
             if( (traversal.getTraversal(curLocX+1, curLocY)&0xf0) == 0xf0 ){
-                neighborhood[1] = potential.getPotential(curLocX+1, curLocY);
+                neighborhood[1] = potential.getPotential(curLocX+1, curLocY)+1;
             }else{
                 neighborhood[1] = MicromouseRun.BOARD_MAX*MicromouseRun.BOARD_MAX;
             }
@@ -199,7 +203,7 @@ public class Droid {
         if( (travVal&0x04) != 0x04 && curLocY < MicromouseRun.BOARD_MAX-1 ){
             System.out.format("S: %x\n", (traversal.getTraversal(curLocX, curLocY+1)&0xf0));
             if( (traversal.getTraversal(curLocX, curLocY+1)&0xf0) == 0xf0 ){
-                neighborhood[2] = potential.getPotential(curLocX, curLocY+1);
+                neighborhood[2] = potential.getPotential(curLocX, curLocY+1)+1;
             }else{
                 neighborhood[2] = MicromouseRun.BOARD_MAX*MicromouseRun.BOARD_MAX;
             }
@@ -207,7 +211,7 @@ public class Droid {
         if( (travVal&0x08) != 0x08 && curLocX > 0 ){
             if( (traversal.getTraversal(curLocX-1, curLocY)&0xf0) == 0xf0 ){
                 System.out.format("W: %x\n", (traversal.getTraversal(curLocX-1, curLocY)&0xf0));
-                neighborhood[3] = potential.getPotential(curLocX-1, curLocY);
+                neighborhood[3] = potential.getPotential(curLocX-1, curLocY)+1;
             }else{
                 neighborhood[3] = MicromouseRun.BOARD_MAX*MicromouseRun.BOARD_MAX;
             }
@@ -278,8 +282,11 @@ public class Droid {
         updateCoordinates();
         //stop = System.nanoTime();
         //System.out.format("Update coordinates: \t%f ns\n", stop-start);
-        if( curLocX == MicromouseRun.GOAL && curLocY == MicromouseRun.GOAL ){
-            goal = true;
+        if( potential.getPotential(curLocX, curLocY) == 0 ){
+            homing = true;
+        }
+        if( homing && curLocX == 0 && curLocY == MicromouseRun.GOAL ){
+            trenchRun = true;
         }
         System.out.println();
     }
@@ -291,7 +298,7 @@ public class Droid {
         curDirec = 0;
         curLocX = 0;
         curLocY = MicromouseRun.BOARD_MAX-1;
-        goal = false;
+        homing = false;
         traversal.resetTraversal();
         potential.resetPotential();
     }

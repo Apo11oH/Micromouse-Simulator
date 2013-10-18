@@ -1,4 +1,4 @@
-Micromouse Simulator
+Micromouse Simulator (BETA)
 ====================
 A program that tests the maze mapping algorithm used on a micromouse.
 
@@ -21,7 +21,6 @@ West = 0x08
 ex. if there are walls in the North, East and South, the cell value will be 11
 
 Current Bugs:
-No bugs, I can find.
 Working on the engine function after reaching the middle though.
 
-Team S.H.I.E.L.D.
+UCSD, Team S.H.I.E.L.D.
